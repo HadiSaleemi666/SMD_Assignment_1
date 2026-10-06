@@ -223,4 +223,8 @@
     <string name="phone_value">+92 300 1234567</string>
     <string name="gender">Gender</string>
     <string name="male">Male</string>
+    <string name="add_icon">add icon</string>
+    <string name="notification_badge">notification badge</string>
+    <string name="product_image">product image</string>
+    <string name="just_listed">Just Listed</string>
 </resources>

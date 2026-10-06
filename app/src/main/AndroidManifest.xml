@@ -11,16 +11,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SMD_Assignment1">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".CreateAccountActivity" android:exported="false" />
+        <activity android:name=".StartSocialMediaActivity" android:exported="false" />
+        <activity android:name=".LikeActivity" android:exported="false" />
+        <activity android:name=".CommentsActivity" android:exported="false" />
+        <activity android:name=".CreatePostActivity" android:exported="false" />
+        <activity android:name=".PictureSendActivity" android:exported="false" />
+        <activity android:name=".CameraActivity" android:exported="false" />
+        <activity android:name=".StoryEditorActivity" android:exported="false" />
+        <activity android:name=".StoryViewerActivity" android:exported="false" />
+        <activity android:name=".YourStoryActivity" android:exported="false" />
+        <activity android:name=".SearchActivity" android:exported="false" />
+        <activity android:name=".FriendsActivity" android:exported="false" />
+        <activity android:name=".MyProfileActivity" android:exported="false" />
+        <activity android:name=".EditProfileActivity" android:exported="false" />
+        <activity android:name=".ProfileActivity" android:exported="false" />
+        <activity android:name=".NotificationsActivity" android:exported="false" />
+        <activity android:name=".MenuActivity" android:exported="false" />
+        <activity android:name=".ChatsActivity" android:exported="false" />
+        <activity android:name=".ChatActivity" android:exported="false" />
+        <activity android:name=".CallActivity" android:exported="false" />
+        <activity android:name=".MarketplaceActivity" android:exported="false" />
+
     </application>
 
 </manifest>

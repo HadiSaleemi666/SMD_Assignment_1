@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -8,46 +7,49 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:paddingEnd="16dp">
+        android:layout_height="60dp">
 
         <ImageView
             android:id="@+id/btnBack"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="2dp"
             android:padding="12dp"
-            android:src="@drawable/ic_back"
-            app:tint="@color/ink" />
+            android:src="@drawable/ol_back"
+            android:tint="@color/ink" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/btnBack"
+            android:layout_marginStart="52dp"
+            android:letterSpacing="-0.03"
             android:text="Chats"
             android:textColor="@color/ink"
-            android:textSize="28sp"
+            android:textSize="29sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btnCompose"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="12dp"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/pill"
-            android:padding="13dp"
-            android:src="@drawable/ic_edit"
-            app:tint="@color/ink" />
+            android:padding="11dp"
+            android:src="@drawable/ol_pencil"
+            android:tint="@color/ink" />
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/bg_pill_gray"
         android:gravity="center_vertical"
@@ -56,29 +58,30 @@
         android:paddingEnd="16dp">
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:src="@drawable/ic_search"
-            app:tint="@color/ink2" />
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ol_search"
+            android:tint="@color/ink2" />
 
         <EditText
             android:id="@+id/etSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
             android:background="@null"
+            android:gravity="center_vertical"
             android:hint="Search"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@color/ink"
-            android:textColorHint="@color/ink2"
-            android:textSize="17sp" />
+            android:textColorHint="#8B867E"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="15dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -86,14 +89,197 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp" />
+            android:paddingStart="11dp"
+            android:paddingEnd="11dp">
+
+        <LinearLayout
+            android:id="@+id/a0"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="59dp"
+                android:layout_height="59dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/pill"
+                android:padding="18dp"
+                android:src="@drawable/ol_plus"
+                android:tint="@color/ink" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Your note"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a1"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/a1_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#A23B52"
+                    android:text="AK"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_online" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Aisha"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a2"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/a2_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#2F6E4E"
+                    android:text="OF"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_online" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Omar"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a3"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/a3_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#4B4F93"
+                    android:text="SI"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_online" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Sara"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a4"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/a4_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#8B5A2B"
+                    android:text="HA"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_online" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="Hamza"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        </LinearLayout>
     </HorizontalScrollView>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:layout_weight="1"
         android:scrollbars="none">
 
@@ -101,7 +287,369 @@
             android:id="@+id/chatList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/c1"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/c1_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#A23B52"
+                    android:text="AK"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_online" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/c1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:text="Aisha Khan"
+                    android:textColor="@color/ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Sending the photos tonight · 2m"
+                    android:textColor="@color/ink"
+                    android:textSize="15.5sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#0B5F61" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/c2"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/c2_av"
+                    style="@style/AvatarText"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="#6B5B2B"
+                    android:text="MC"
+                    android:textSize="14sp" />
+
+                <TextView
+                    style="@style/AvatarText"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:backgroundTint="#3F6E8C"
+                    android:text="ZR"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/c2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:text="Design crew"
+                    android:textColor="@color/ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Maya: the new mockups look clean · 15m"
+                    android:textColor="@color/ink"
+                    android:textSize="15.5sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#0B5F61" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/c3"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/c3_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#7B4F7F"
+                    android:text="LM"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/c3_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:text="Lina Marsh"
+                    android:textColor="@color/ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="You: See you at the pier · 1h"
+                    android:textColor="@color/ink2"
+                    android:textSize="15.5sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="#A23B52" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/c4"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/c4_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#2F6E4E"
+                    android:text="OF"
+                    android:textSize="22sp" />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_online" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/c4_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:text="Omar Farooq"
+                    android:textColor="@color/ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Haha that story was wild · 3h"
+                    android:textColor="@color/ink2"
+                    android:textSize="15.5sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/c5"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/c5_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#7B4F7F"
+                    android:text="BA"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/c5_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:text="Bilal Ahmed"
+                    android:textColor="@color/ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="Thanks, bro! · Mon"
+                    android:textColor="@color/ink2"
+                    android:textSize="15.5sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/c6"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="59dp"
+                android:layout_height="59dp">
+
+                <TextView
+                    android:id="@+id/c6_av"
+                    style="@style/AvatarText"
+                    android:layout_width="59dp"
+                    android:layout_height="59dp"
+                    android:backgroundTint="#2F6E4E"
+                    android:text="NF"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/c6_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="-0.01"
+                    android:text="Noor Fatima"
+                    android:textColor="@color/ink"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="You: Happy birthday! · Sun"
+                    android:textColor="@color/ink2"
+                    android:textSize="15.5sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
 
     <View
@@ -123,17 +671,18 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_chat"
-                app:tint="@color/teal" />
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ol_messenger"
+                android:tint="@color/teal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:text="Chats"
                 android:textColor="@color/teal"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -146,17 +695,18 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_people"
-                app:tint="@color/tab_idle" />
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ol_people"
+                android:tint="@color/tab_idle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:text="People"
                 android:textColor="@color/tab_idle"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -169,18 +719,20 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_stories"
-                app:tint="@color/tab_idle" />
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ol_stories"
+                android:tint="@color/tab_idle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:text="Stories"
                 android:textColor="@color/tab_idle"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

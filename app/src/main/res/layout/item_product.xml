@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_weight="1"
@@ -15,7 +16,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/bg_round16"
             android:clipToOutline="true"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/product_image" />
 
         <TextView
             android:id="@+id/tagNew"
@@ -27,11 +29,12 @@
             android:paddingTop="4dp"
             android:paddingEnd="8dp"
             android:paddingBottom="4dp"
-            android:text="JUST LISTED"
-            android:textColor="#FFFFFF"
+            android:text="@string/just_listed"
+            android:textColor="@color/white"
             android:textSize="11sp"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="gone"
+            tools:ignore="SmallSp" />
     </RelativeLayout>
 
     <TextView

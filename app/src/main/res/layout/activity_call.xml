@@ -17,7 +17,7 @@
             android:layout_height="14dp"
             android:alpha="0.8"
             android:src="@drawable/ic_lock"
-            app:tint="#FFFFFF" />
+            android:tint="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
             android:backgroundTint="@color/heart"
             android:padding="5dp"
             android:src="@drawable/ic_heart"
-            app:tint="#FFFFFF" />
+            android:tint="#FFFFFF" />
     </LinearLayout>
 
     <TextView
@@ -114,7 +114,7 @@
             android:backgroundTint="#33FFFFFF"
             android:padding="18dp"
             android:src="@drawable/ic_list"
-            app:tint="#FFFFFF" />
+            android:tint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/btnMute"
@@ -125,7 +125,7 @@
             android:backgroundTint="#33FFFFFF"
             android:padding="18dp"
             android:src="@drawable/ic_mic"
-            app:tint="#FFFFFF" />
+            android:tint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/btnEnd"
@@ -135,7 +135,7 @@
             android:background="@drawable/bg_end_call"
             android:padding="24dp"
             android:src="@drawable/ic_call_end"
-            app:tint="#FFFFFF" />
+            android:tint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/btnSpeaker"
@@ -146,6 +146,6 @@
             android:backgroundTint="#33FFFFFF"
             android:padding="18dp"
             android:src="@drawable/ic_speaker"
-            app:tint="#FFFFFF" />
+            android:tint="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>

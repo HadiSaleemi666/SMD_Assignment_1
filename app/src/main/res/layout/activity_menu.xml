@@ -2,11 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/app_bg"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_tabbar" />
+    <include layout="@layout/tabbar_menu" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,37 +16,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/cardProfile"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_card"
-                android:padding="14dp">
+                android:layout_height="71dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_card12"
+                android:elevation="2dp">
 
                 <TextView
                     android:id="@+id/avJW"
                     style="@style/AvatarText"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:textSize="18sp" />
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="13dp"
+                    android:backgroundTint="#0B5F61"
+                    android:text="JW"
+                    android:textSize="19sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="14dp"
+                    android:layout_marginStart="12dp"
                     android:layout_toEndOf="@id/avJW"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:letterSpacing="-0.02"
                         android:text="Jacob West"
                         android:textColor="@color/ink"
-                        android:textSize="18sp"
+                        android:textSize="19sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -55,258 +61,286 @@
                         android:layout_height="wrap_content"
                         android:text="See your profile"
                         android:textColor="@color/ink2"
-                        android:textSize="15sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_chevron"
-                    app:tint="@color/ink2" />
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/ol_chev_right"
+                    android:tint="@color/ink" />
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="8dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="9dp"
+                android:gravity="center_vertical"
                 android:text="All shortcuts"
                 android:textColor="@color/ink2"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/cardMemories"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="6dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_card"
+                    android:background="@drawable/bg_card12"
+                    android:elevation="2dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingStart="13dp"
+                    android:paddingTop="13dp">
 
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:src="@drawable/ic_clock"
-                        app:tint="@color/teal" />
+                        android:src="@drawable/ol_clock"
+                        android:tint="@color/teal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="4dp"
                         android:text="Memories"
                         android:textColor="@color/ink"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="17sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/cardSaved"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_card"
+                    android:background="@drawable/bg_card12"
+                    android:elevation="2dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingStart="13dp"
+                    android:paddingTop="13dp">
 
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:src="@drawable/ic_bookmark"
-                        app:tint="@color/k_purple" />
+                        android:src="@drawable/ol_bookmark"
+                        android:tint="#7B4F7F" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="4dp"
                         android:text="Saved"
                         android:textColor="@color/ink"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="17sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/cardGroups"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="6dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_card"
+                    android:background="@drawable/bg_card12"
+                    android:elevation="2dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingStart="13dp"
+                    android:paddingTop="13dp">
 
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:src="@drawable/ic_people"
-                        app:tint="@color/indigo" />
+                        android:src="@drawable/ol_people"
+                        android:tint="#4B4F93" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="4dp"
                         android:text="Groups"
                         android:textColor="@color/ink"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="17sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/cardMarket"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_card"
+                    android:background="@drawable/bg_card12"
+                    android:elevation="2dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingStart="13dp"
+                    android:paddingTop="13dp">
 
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:src="@drawable/ic_store"
-                        app:tint="@color/k_green" />
+                        android:src="@drawable/ol_store"
+                        android:tint="#2F6E4E" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="4dp"
                         android:text="Marketplace"
                         android:textColor="@color/ink"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="17sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/cardFriends"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="6dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_card"
+                    android:background="@drawable/bg_card12"
+                    android:elevation="2dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingStart="13dp"
+                    android:paddingTop="13dp">
 
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:src="@drawable/ic_person"
-                        app:tint="@color/teal" />
+                        android:src="@drawable/ol_person"
+                        android:tint="@color/teal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="4dp"
                         android:text="Friends"
                         android:textColor="@color/ink"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="17sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/cardEvents"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_card"
+                    android:background="@drawable/bg_card12"
+                    android:elevation="2dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingStart="13dp"
+                    android:paddingTop="13dp">
 
                     <ImageView
                         android:layout_width="26dp"
                         android:layout_height="26dp"
-                        android:src="@drawable/ic_calendar"
-                        app:tint="@color/rust" />
+                        android:src="@drawable/ol_calendar"
+                        android:tint="@color/rust" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="4dp"
                         android:text="Events"
                         android:textColor="@color/ink"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textSize="17sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/btnSeeMore"
                 android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/bg_gray12"
+                android:layout_height="42dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_cream12"
                 android:gravity="center"
                 android:text="See more"
                 android:textColor="@color/ink"
-                android:textSize="16sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="12dp" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/line" />
 
-            <!-- Help & support -->
             <RelativeLayout
                 android:id="@+id/rowHelp"
                 android:layout_width="match_parent"
-                android:layout_height="64dp">
+                android:layout_height="54dp"
+                android:paddingStart="21dp"
+                android:paddingEnd="26dp">
 
                 <ImageView
                     android:id="@+id/icHelp"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_centerVertical="true"
                     android:background="@drawable/bg_circle"
                     android:backgroundTint="@color/pill"
-                    android:padding="11dp"
-                    android:src="@drawable/ic_help"
-                    app:tint="@color/ink" />
+                    android:padding="9dp"
+                    android:src="@drawable/ol_help"
+                    android:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="13dp"
                     android:layout_toEndOf="@id/icHelp"
                     android:text="Help &amp; support"
                     android:textColor="@color/ink"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/arrowHelp"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_expand"
-                    app:tint="@color/ink2" />
+                    android:src="@drawable/ol_chev_down"
+                    android:tint="@color/ink2" />
             </RelativeLayout>
 
             <LinearLayout
@@ -314,7 +348,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="60dp"
+                android:paddingStart="72dp"
                 android:visibility="gone">
 
                 <TextView
@@ -324,7 +358,7 @@
                     android:gravity="center_vertical"
                     android:text="Help centre"
                     android:textColor="@color/ink"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/subHelp2"
@@ -333,50 +367,52 @@
                     android:gravity="center_vertical"
                     android:text="Report a problem"
                     android:textColor="@color/ink"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/line" />
 
-            <!-- Settings & privacy -->
             <RelativeLayout
                 android:id="@+id/rowSettings"
                 android:layout_width="match_parent"
-                android:layout_height="64dp">
+                android:layout_height="54dp"
+                android:paddingStart="21dp"
+                android:paddingEnd="26dp">
 
                 <ImageView
                     android:id="@+id/icSettings"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_centerVertical="true"
                     android:background="@drawable/bg_circle"
                     android:backgroundTint="@color/pill"
-                    android:padding="11dp"
-                    android:src="@drawable/ic_settings"
-                    app:tint="@color/ink" />
+                    android:padding="9dp"
+                    android:src="@drawable/ol_settings"
+                    android:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="13dp"
                     android:layout_toEndOf="@id/icSettings"
                     android:text="Settings &amp; privacy"
                     android:textColor="@color/ink"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/arrowSettings"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_expand"
-                    app:tint="@color/ink2" />
+                    android:src="@drawable/ol_chev_down"
+                    android:tint="@color/ink2" />
             </RelativeLayout>
 
             <LinearLayout
@@ -384,7 +420,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="60dp"
+                android:paddingStart="72dp"
                 android:visibility="gone">
 
                 <TextView
@@ -394,7 +430,7 @@
                     android:gravity="center_vertical"
                     android:text="Settings"
                     android:textColor="@color/ink"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/subSet2"
@@ -403,50 +439,52 @@
                     android:gravity="center_vertical"
                     android:text="Privacy checkup"
                     android:textColor="@color/ink"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/line" />
 
-            <!-- Also from SMD -->
             <RelativeLayout
                 android:id="@+id/rowSmd"
                 android:layout_width="match_parent"
-                android:layout_height="64dp">
+                android:layout_height="54dp"
+                android:paddingStart="21dp"
+                android:paddingEnd="26dp">
 
                 <ImageView
                     android:id="@+id/icSmd"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:layout_centerVertical="true"
                     android:background="@drawable/bg_circle"
                     android:backgroundTint="@color/pill"
-                    android:padding="11dp"
-                    android:src="@drawable/ic_apps"
-                    app:tint="@color/ink" />
+                    android:padding="9dp"
+                    android:src="@drawable/ol_apps"
+                    android:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="13dp"
                     android:layout_toEndOf="@id/icSmd"
                     android:text="Also from SMD"
                     android:textColor="@color/ink"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:textSize="18sp" />
 
                 <ImageView
                     android:id="@+id/arrowSmd"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_expand"
-                    app:tint="@color/ink2" />
+                    android:src="@drawable/ol_chev_down"
+                    android:tint="@color/ink2" />
             </RelativeLayout>
 
             <LinearLayout
@@ -454,7 +492,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="60dp"
+                android:paddingStart="72dp"
                 android:visibility="gone">
 
                 <TextView
@@ -464,7 +502,7 @@
                     android:gravity="center_vertical"
                     android:text="SMD Studio"
                     android:textColor="@color/ink"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/subSmd2"
@@ -473,32 +511,34 @@
                     android:gravity="center_vertical"
                     android:text="SMD Learn"
                     android:textColor="@color/ink"
-                    android:textSize="15sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="14dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/bg_gray12"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_cream12"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
-                    android:src="@drawable/ic_logout"
-                    app:tint="@color/ink" />
+                    android:src="@drawable/ol_logout"
+                    android:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="8dp"
                     android:text="Log out"
                     android:textColor="@color/ink"
-                    android:textSize="17sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
+        <shape android:shape="oval"><solid android:color="#0B5F61"/></shape>
+    </item>
+    <item android:top="2dp" android:bottom="2dp" android:left="2dp" android:right="2dp">
         <shape android:shape="oval"><solid android:color="#FFFFFF"/></shape>
     </item>
-    <item android:top="5dp" android:bottom="5dp" android:left="5dp" android:right="5dp">
-        <shape android:shape="oval">
-            <solid android:color="#2F6E4E"/>
-            <stroke android:width="3dp" android:color="#0B5F61"/>
-        </shape>
+    <item android:top="6dp" android:bottom="6dp" android:left="6dp" android:right="6dp">
+        <shape android:shape="oval"><solid android:color="#2F6E4E"/></shape>
     </item>
 </layer-list>

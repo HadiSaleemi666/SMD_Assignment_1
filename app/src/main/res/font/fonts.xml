@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:app="http://schemas.android.com/apk/res-auto">
     <font
-        font="@font/Logo_Text_Bold"
-        fontStyle="normal"
-        fontWeight="700" />
+        app:font="@font/logo_text_bold"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
 </font-family>

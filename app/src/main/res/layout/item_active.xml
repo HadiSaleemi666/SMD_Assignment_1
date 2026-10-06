@@ -26,7 +26,8 @@
             android:padding="20dp"
             android:src="@drawable/ic_add"
             android:visibility="gone"
-            app:tint="@color/ink" />
+            app:tint="@color/ink"
+            android:contentDescription="@string/add_icon" />
 
         <View
             android:id="@+id/dot"

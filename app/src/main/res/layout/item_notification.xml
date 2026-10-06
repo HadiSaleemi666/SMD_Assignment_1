@@ -37,7 +37,8 @@
             android:layout_height="22dp"
             android:layout_centerInParent="true"
             android:background="@drawable/bg_circle"
-            android:padding="4dp" />
+            android:padding="4dp"
+            android:contentDescription="@string/notification_badge" />
     </RelativeLayout>
 
     <ImageView
@@ -47,7 +48,8 @@
         android:layout_alignParentEnd="true"
         android:padding="4dp"
         android:src="@drawable/ic_more"
-        app:tint="@color/ink2" />
+        app:tint="@color/ink2"
+        android:contentDescription="@string/more_icon" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,8 +89,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_teal12"
                 android:gravity="center"
-                android:text="Confirm"
-                android:textColor="#FFFFFF"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -100,7 +102,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_gray12"
                 android:gravity="center"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:textColor="@color/ink"
                 android:textSize="15sp"
                 android:textStyle="bold" />
