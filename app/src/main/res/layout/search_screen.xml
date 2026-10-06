@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/RL1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="14dp"
+            android:src="@drawable/arrow_back"
+            android:contentDescription="@string/back_arrow"/>
+
+        <RelativeLayout
+            android:id="@+id/search_pill"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignStart="@id/backarrow"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="14dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/beige_chip">
+
+            <ImageView
+                android:id="@+id/pill_search_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="14dp"
+                android:src="@drawable/search_icon_gray"
+                android:contentDescription="@string/search_icon"/>
+
+            <TextView
+        android:id="@+id/tv_query"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/pill_search_icon"
+                android:layout_marginStart="30dp"
+                android:layout_centerVertical="true"
+                android:text="@string/search_query"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <ImageView
+        android:id="@+id/btn_clear"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="7dp"
+                android:padding="8dp"
+                android:src="@drawable/cancel_icon_white"
+                android:background="@drawable/clear_circle"
+                android:contentDescription="@string/clear_search"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/chips_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignTop="@id/RL1"
+        android:layout_marginTop="60dp"
+        android:scrollbars="none"
+        android:background="@drawable/one_sided_black_border">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp">
+
+    <TextView
+        android:id="@+id/chip_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/lightseagreen_chip"
+                    android:text="@string/chip_all"
+                    android:textColor="@color/SeaGreen"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/chip_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/beige_chip"
+                    android:text="@string/chip_people"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/chip_posts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/beige_chip"
+                    android:text="@string/chip_posts"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/chip_groups"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/beige_chip"
+                    android:text="@string/chip_groups"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/chip_marketplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:background="@drawable/beige_chip"
+                    android:text="@string/chip_marketplace"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/people_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/chips_scroll"
+        android:layout_marginTop="66dp">
+
+        <TextView
+            android:id="@+id/people_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="@string/people"
+            android:textColor="@color/black"
+            android:fontFamily="@font/logo_text_bold"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+                android:id="@+id/person1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignTop="@id/people_heading"
+                android:layout_marginTop="34dp">
+
+                <RelativeLayout
+                    android:id="@+id/person1_pfp"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/pfp_green"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        android:contentDescription="@string/pfp_green"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/of"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/person1_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/person1_pfp"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/omar_farooq"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/person1_name"
+                    android:layout_alignTop="@id/person1_name"
+                    android:layout_marginTop="23dp"
+                    android:text="@string/omar_farooq_details"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"/>
+
+            </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/person2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignTop="@id/person1"
+                android:layout_marginTop="68dp">
+
+                <RelativeLayout
+                    android:id="@+id/person2_pfp"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/pfp_purple"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        android:contentDescription="@string/pfp_green"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/os"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/person2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/person2_pfp"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/omar_siddiqui"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/person2_name"
+                    android:layout_alignTop="@id/person2_name"
+                    android:layout_marginTop="23dp"
+                    android:text="@string/omar_siddiqui_details"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"/>
+
+                <ImageView
+        android:id="@+id/add_person2"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:padding="11dp"
+                    android:src="@drawable/person_add_seagreen"
+                    android:background="@drawable/lightseagreen_circle"
+                    android:contentDescription="@string/add_friend_icon"/>
+
+            </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/person3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignTop="@id/person2"
+                android:layout_marginTop="68dp">
+
+                <RelativeLayout
+                    android:id="@+id/person3_pfp"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_centerVertical="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/pfp_brown"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2"
+                        android:contentDescription="@string/pfp_green"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/ot"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="17sp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/person3_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/person3_pfp"
+                    android:layout_marginStart="66dp"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/omar_tariq"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/person3_name"
+                    android:layout_alignTop="@id/person3_name"
+                    android:layout_marginTop="23dp"
+                    android:text="@string/omar_tariq_details"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"/>
+
+                <ImageView
+        android:id="@+id/add_person3"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="18dp"
+                    android:padding="11dp"
+                    android:src="@drawable/person_add_seagreen"
+                    android:background="@drawable/lightseagreen_circle"
+                    android:contentDescription="@string/add_friend_icon"/>
+
+            </RelativeLayout>
+
+        <TextView
+        android:id="@+id/see_all_people"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignTop="@id/person3"
+            android:layout_marginTop="72dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:gravity="center"
+            android:background="@drawable/beige_button_10"
+            android:text="@string/see_all_people"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/groups_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/people_section"
+        android:layout_marginTop="300dp">
+
+        <TextView
+            android:id="@+id/groups_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="@string/groups"
+            android:textColor="@color/black"
+            android:fontFamily="@font/logo_text_bold"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+            android:id="@+id/group1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignTop="@id/groups_heading"
+            android:layout_marginTop="34dp">
+
+            <RelativeLayout
+                android:id="@+id/group1_pfp"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="18dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/rounded_square_purple">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/op"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="17sp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/join_button"
+                android:layout_width="62dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="18dp"
+                android:gravity="center"
+                android:background="@drawable/seagreen_button_10"
+                android:text="@string/join"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/group1_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/group1_pfp"
+                android:layout_toStartOf="@id/join_button"
+                android:layout_marginStart="66dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="9dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text="@string/omars_photography_circle"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/group1_name"
+                android:layout_alignTop="@id/group1_name"
+                android:layout_toStartOf="@id/join_button"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="23dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text="@string/group_details"
+                android:textColor="@color/gray"
+                android:textSize="12sp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recent_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/groups_section"
+        android:layout_marginTop="110dp">
+
+        <TextView
+            android:id="@+id/recent_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="@string/recent_searches"
+            android:textColor="@color/black"
+            android:fontFamily="@font/logo_text_bold"
+            android:textSize="18sp"/>
+
+        <RelativeLayout
+                android:id="@+id/recent1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignTop="@id/recent_heading"
+                android:layout_marginTop="34dp">
+
+                <ImageView
+                    android:id="@+id/recent1_clock"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_centerVertical="true"
+                    android:padding="11dp"
+                    android:src="@drawable/clock_icon"
+                    android:background="@drawable/circle_icon"
+                    android:contentDescription="@string/clock_icon"/>
+
+                <TextView
+        android:id="@+id/recent1_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/recent1_clock"
+                    android:layout_marginStart="58dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recent_search_1"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <ImageView
+        android:id="@+id/recent1_remove"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/cancel_icon"
+                    android:contentDescription="@string/remove_search"/>
+
+            </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/recent2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignTop="@id/recent1"
+                android:layout_marginTop="56dp">
+
+                <ImageView
+                    android:id="@+id/recent2_clock"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_centerVertical="true"
+                    android:padding="11dp"
+                    android:src="@drawable/clock_icon"
+                    android:background="@drawable/circle_icon"
+                    android:contentDescription="@string/clock_icon"/>
+
+                <TextView
+        android:id="@+id/recent2_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/recent2_clock"
+                    android:layout_marginStart="58dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recent_search_2"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <ImageView
+        android:id="@+id/recent2_remove"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/cancel_icon"
+                    android:contentDescription="@string/remove_search"/>
+
+            </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/recent3"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignTop="@id/recent2"
+                android:layout_marginTop="56dp">
+
+                <ImageView
+                    android:id="@+id/recent3_clock"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_centerVertical="true"
+                    android:padding="11dp"
+                    android:src="@drawable/clock_icon"
+                    android:background="@drawable/circle_icon"
+                    android:contentDescription="@string/clock_icon"/>
+
+                <TextView
+        android:id="@+id/recent3_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/recent3_clock"
+                    android:layout_marginStart="58dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recent_search_3"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <ImageView
+        android:id="@+id/recent3_remove"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/cancel_icon"
+                    android:contentDescription="@string/remove_search"/>
+
+            </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

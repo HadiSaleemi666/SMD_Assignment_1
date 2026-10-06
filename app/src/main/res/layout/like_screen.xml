@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/RL1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/one_sided_black_border"
+        android:foreground="@color/transparentblack">
+
+        <ImageView
+            android:id="@+id/backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:contentDescription="@string/back_arrow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lina_s_post"
+            android:textColor="@color/black"
+            android:layout_alignStart="@id/backarrow"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/logo_text_bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RL2"
+        android:foreground="@color/transparentblack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/RL1"
+        android:layout_marginTop="50dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/pfp4"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/pfp_pinkpurple"
+            android:background="@drawable/white_border"
+            android:contentDescription="@string/pfp_green"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/pfp4"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="23dp"
+            android:text="@string/lm"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/pfp4"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/lina_marsh"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/textp1"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/is_at"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/textp2"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/clifton_beach"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/statusupdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/pfp4"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/_2h_x2022"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            tools:ignore="SmallSp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/statusupdate"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/web"
+            android:contentDescription="@string/web_icon"/>
+
+        <ImageView
+            android:id="@+id/horizontal_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/textp3"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="150dp"
+            android:src="@drawable/more_horiz_icon"
+            android:contentDescription="@string/more_button"/>
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/horizontal_more"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="60dp"
+            android:src="@drawable/cancel_icon"
+            android:contentDescription="@string/cancel_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/pfp4"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="12dp"
+            android:text="@string/post_text"
+            android:textSize="15sp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:foreground="@color/transparentblack"
+        android:id="@+id/n1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignTop="@id/RL2"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/n1"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:id="@+id/RL4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/n1"
+        android:layout_marginTop="250dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:background="@drawable/one_sided_black_border"
+        android:foreground="@color/transparentblack"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:id="@+id/reactions"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:src="@drawable/reaction_icons"
+            android:layout_marginTop="7dp" />
+
+        <TextView
+            android:layout_alignStart="@id/reactions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="7dp"
+            android:text="@string/aisha_and_1_2k_others_86_comments_x2022_12_shares"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_alignTop="@id/RL4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:paddingTop="5dp"
+        android:paddingStart="15dp"
+        android:paddingBottom="7dp"
+        android:foreground="@color/transparentblack">
+
+        <ImageView
+            android:id="@+id/likeimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/like"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/likeword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/gray"
+            android:text="@string/like"
+            android:layout_alignStart="@id/likeimg"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="27dp"/>
+
+        <ImageView
+            android:id="@+id/commentimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/comment"
+            android:layout_alignStart="@id/likeword"
+            android:layout_marginStart="110dp"/>
+
+        <TextView
+            android:id="@+id/commentword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/gray"
+            android:text="@string/comment"
+            android:layout_alignStart="@id/commentimg"
+            android:layout_marginStart="27dp"/>
+
+        <ImageView
+            android:id="@+id/shareimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share"
+            android:layout_alignStart="@id/commentword"
+            android:layout_marginStart="140dp"/>
+
+        <TextView
+            android:id="@+id/shareword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/gray"
+            android:text="@string/share"
+            android:layout_alignStart="@id/shareimg"
+            android:layout_marginStart="27dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/coloredLL1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/LightBeige"
+        android:foreground="@color/transparentblack"
+        android:layout_alignTop="@id/RL4"
+        android:layout_marginTop="70dp"
+        android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/RL5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/coloredLL1"
+        android:layout_marginTop="9dp"
+        android:foreground="@color/transparentblack"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/most_relevant"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/logo_text_bold"/>
+
+        <ImageView
+            android:layout_width="13dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="135dp"
+            android:contentDescription="@string/drop_down_button"
+            android:src="@drawable/arrow_down"/>
+
+        <ImageView
+            android:id="@+id/pinkpfp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/pfp_darkpink"
+            android:contentDescription="@string/pfp_green"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/pinkpfp"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="23dp"
+            android:text="@string/ak"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_alignStart="@id/pinkpfp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/comment_design"
+            android:text="@string/that_sky_is_unreal"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_alignBottom="@id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/aisha_khan"
+            android:layout_marginStart="70dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="35dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/RL5"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="110dp"
+        android:background="@color/LightBeige"
+        android:foreground="@color/transparentblack"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reactions"
+        android:layout_marginTop="365dp"
+        android:layout_marginStart="30dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/love"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="345dp"
+        android:layout_marginStart="77dp"
+        android:background="@drawable/reaction_description"
+        android:textSize="11sp"
+        android:padding="2dp"/>
+
+</RelativeLayout>

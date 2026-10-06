@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal">#0B5F61</color>
+    <color name="ink">#1E1E1E</color>
+    <color name="ink2">#6B655C</color>
+    <color name="tab_idle">#4A453E</color>
+    <color name="pill">#ECE9E3</color>
+    <color name="app_bg">#F3F1EE</color>
+    <color name="rust">#BC4A28</color>
+    <color name="line">#E3DFD8</color>
+    <color name="teal_light">#E0EEEE</color>
+    <color name="k_purple">#7B4F7F</color>
+    <color name="indigo">#4B4F93</color>
+    <color name="k_green">#2F6E4E</color>
+    <color name="maroon">#A23B52</color>
+    <color name="brown">#8B5A2B</color>
+    <color name="steel">#3F6E8C</color>
+    <color name="amber">#C98A12</color>
+    <color name="heart">#D13A55</color>
+    <color name="olive">#6B5B2B</color>
+</resources>

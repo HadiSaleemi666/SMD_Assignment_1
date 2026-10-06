@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="SeaGreen">#0B5F63</color>
+    <color name="Porcelain">#F3F2EE</color>
+    <color name="LightBrown">#84817C</color>
+    <color name="gray">#8B898E</color>
+    <color name="GreenPorcelain">#F3F2EE</color>
+    <color name="LightBeige">#ECE9E4</color>
+    <color name="Red_Orange">#B54D28</color>
+    <color name="lightblue">#DEEEEE</color>
+    <color name="transparentblack">#aa000000</color>
+    <color name="lightseagreen">#e1ecea</color>
+    <color name="red">#ba4929</color>
+    <color name="bluepurple">#4b4f8e</color>
+    <color name="green">#2f6b4f</color>
+    <color name="gold">#c98611</color>
+    <color name="purple">#7a4e7f</color>
+    <color name="blue">#2596be</color>
+
+    <!-- Screens 09-16 -->
+    <color name="nearblack">#121212</color>
+    <color name="transparentgray">#59000000</color>
+    <color name="transparentwhite">#80FFFFFF</color>
+    <color name="fadedwhite">#B3FFFFFF</color>
+    <color name="crimson">#D13A50</color>
+    <color name="lightgreen">#2EA44F</color>
+    <color name="darkpink">#9A4153</color>
+    <color name="darkpill">#2A2A2A</color>
+    <color name="clearbutton">#A8A49E</color>
+</resources>

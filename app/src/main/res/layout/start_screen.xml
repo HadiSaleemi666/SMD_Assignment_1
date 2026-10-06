@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/SeaGreen"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_marginTop="220dp"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:src="@drawable/kinnectlogo">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AppName"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/logo_text_bold"
+        android:layout_marginBottom="200dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bottom_text"
+        android:textColor="@color/white"
+        android:textSize="15sp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:text="@string/bottomtext2"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:id="@+id/tbTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/ink"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/btnMessenger"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/pill"
+                android:padding="11dp"
+                android:src="@drawable/ic_chat"
+                app:tint="@color/ink" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/rust"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnSearch"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/btnMessenger">
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/pill"
+                android:padding="11dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/ink" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/tab0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ic0"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_home" />
+
+            <View
+                android:id="@+id/ind0"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/teal"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ic1"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_people" />
+
+            <View
+                android:id="@+id/ind1"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/teal"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ic2"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_store" />
+
+            <View
+                android:id="@+id/ind2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/teal"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ic3"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_bell" />
+
+            <TextView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignTop="@id/ic3"
+                android:layout_alignEnd="@id/ic3"
+                android:layout_marginTop="-6dp"
+                android:layout_marginEnd="-8dp"
+                android:background="@drawable/bg_circle"
+                android:backgroundTint="@color/rust"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/ind3"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/teal"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ic4"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_menu" />
+
+            <View
+                android:id="@+id/ind4"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/teal"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line" />
+</LinearLayout>

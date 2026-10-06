@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingEnd="12dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/teal" />
+
+        <RelativeLayout
+            android:id="@+id/hdrAvatarBox"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btnBack">
+
+            <TextView
+                android:id="@+id/hdrAvatar"
+                style="@style/AvatarText"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_online" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/hdrAvatarBox"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hdrName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ink"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active now"
+                android:textColor="@color/ink2"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnInfo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_info"
+            app:tint="@color/teal" />
+
+        <ImageView
+            android:id="@+id/btnVideo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/btnInfo"
+            android:padding="8dp"
+            android:src="@drawable/ic_video"
+            app:tint="@color/teal" />
+
+        <ImageView
+            android:id="@+id/btnCall"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/btnVideo"
+            android:padding="8dp"
+            android:src="@drawable/ic_call"
+            app:tint="@color/teal" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line" />
+
+    <!-- Messages -->
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/msgs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/introAvatar"
+                style="@style/AvatarText"
+                android:layout_width="112dp"
+                android:layout_height="112dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textSize="38sp" />
+
+            <TextView
+                android:id="@+id/introName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:text="You're friends on Kinnect · Lives in Karachi"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="12dp"
+                android:text="TODAY 4:49 PM"
+                android:textColor="@color/ink2"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- incoming 1 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/bg_bubble_in"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hey! Are you still coming Saturday?"
+                    android:textColor="@color/ink"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- incoming 2 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/bg_bubble_in"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lina booked the table for 8"
+                    android:textColor="@color/ink"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- incoming 3 with avatar -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/smallAvatar1"
+                    style="@style/AvatarText"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bubble_in"
+                    android:paddingStart="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="10dp"
+                    android:text="Bring the camera"
+                    android:textColor="@color/ink"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- outgoing 1 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/bg_bubble_out"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:text="Yes, obviously"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- outgoing 2 with reaction -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/bubbleBatteries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bubble_out"
+                    android:paddingStart="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="10dp"
+                    android:text="Already charged both batteries"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignStart="@id/bubbleBatteries"
+                    android:layout_alignBottom="@id/bubbleBatteries"
+                    android:layout_marginStart="-6dp"
+                    android:layout_marginBottom="-12dp"
+                    android:background="@drawable/bg_circle"
+                    android:elevation="2dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_heart"
+                    app:tint="@color/heart" />
+            </RelativeLayout>
+
+            <!-- reply -->
+            <TextView
+                android:id="@+id/tvReplied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="2dp"
+                android:textColor="@color/ink2"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_bubble_in"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="Lina booked the table for 8"
+                android:textColor="@color/ink2"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_bubble_out"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:text="Perfect, I'll be there by 7:45"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="232dp"
+                android:layout_height="170dp"
+                android:layout_gravity="end"
+                android:background="@drawable/bg_round16"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/art_lilac" />
+
+            <TextView
+                android:id="@+id/seenDot"
+                style="@style/AvatarText"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="6sp" />
+
+            <!-- typing indicator (new messages are inserted above this row) -->
+            <LinearLayout
+                android:id="@+id/typingRow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/smallAvatar2"
+                    style="@style/AvatarText"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bubble_in"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="●  ●  ●"
+                    android:textColor="#9A948A"
+                    android:textSize="9sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Input bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="6dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/btnPlus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_add_circle"
+            app:tint="@color/teal" />
+
+        <ImageView
+            android:id="@+id/btnCamera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_camera"
+            app:tint="@color/teal" />
+
+        <ImageView
+            android:id="@+id/btnGallery"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_image"
+            app:tint="@color/teal" />
+
+        <ImageView
+            android:id="@+id/btnMic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_mic"
+            app:tint="@color/teal" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_pill_gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp">
+
+            <EditText
+                android:id="@+id/etMsg"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Aa"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/ink"
+                android:textColorHint="@color/ink2"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/btnEmoji"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_emoji"
+                app:tint="@color/teal" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btnSend"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:padding="9dp"
+            android:src="@drawable/ic_thumb"
+            app:tint="@color/teal" />
+    </LinearLayout>
+</LinearLayout>
