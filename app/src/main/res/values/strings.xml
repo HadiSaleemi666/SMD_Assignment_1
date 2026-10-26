@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SMD_Assignment#1</string>
+    <string name="app_name">Kinnect</string>
     <string name="AppName">kinnect</string>
     <string name="eng_uk">English (UK)</string>
     <string name="recent_login">RECENT LOGIN</string>
@@ -227,4 +227,5 @@
     <string name="notification_badge">notification badge</string>
     <string name="product_image">product image</string>
     <string name="just_listed">Just Listed</string>
+    <string name="pass_encrypted">********</string>
 </resources>

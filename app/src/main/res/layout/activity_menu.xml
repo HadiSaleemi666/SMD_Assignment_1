@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/app_bg"
     android:orientation="vertical">
 
-    <include layout="@layout/tabbar_menu" />
+    <include layout="@layout/tabbar_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"/>
 
     <ScrollView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -28,16 +33,12 @@
                 android:background="@drawable/bg_card12"
                 android:elevation="2dp">
 
-                <TextView
+                <com.hadisaleemi.i221043.ui.AvatarView
                     android:id="@+id/avJW"
-                    style="@style/AvatarText"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="13dp"
-                    android:backgroundTint="#0B5F61"
-                    android:text="JW"
-                    android:textSize="19sp" />
+                    android:layout_marginStart="13dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -50,8 +51,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/menuName"
                         android:letterSpacing="-0.02"
-                        android:text="Jacob West"
+                        android:text=""
                         android:textColor="@color/ink"
                         android:textSize="19sp"
                         android:textStyle="bold" />
@@ -71,7 +73,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="14dp"
                     android:src="@drawable/ol_chev_right"
-                    android:tint="@color/ink" />
+                    app:tint="@color/ink" />
             </RelativeLayout>
 
             <TextView
@@ -110,7 +112,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ol_clock"
-                        android:tint="@color/teal" />
+                        app:tint="@color/teal" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -138,7 +140,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ol_bookmark"
-                        android:tint="#7B4F7F" />
+                        app:tint="#7B4F7F" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -175,7 +177,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ol_people"
-                        android:tint="#4B4F93" />
+                        app:tint="#4B4F93" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,7 +205,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ol_store"
-                        android:tint="#2F6E4E" />
+                        app:tint="#2F6E4E" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -240,7 +242,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ol_person"
-                        android:tint="@color/teal" />
+                        app:tint="@color/teal" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -268,7 +270,7 @@
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:src="@drawable/ol_calendar"
-                        android:tint="@color/rust" />
+                        app:tint="@color/rust" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -321,7 +323,7 @@
                     android:backgroundTint="@color/pill"
                     android:padding="9dp"
                     android:src="@drawable/ol_help"
-                    android:tint="@color/ink" />
+                    app:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -340,7 +342,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ol_chev_down"
-                    android:tint="@color/ink2" />
+                    app:tint="@color/ink2" />
             </RelativeLayout>
 
             <LinearLayout
@@ -393,7 +395,7 @@
                     android:backgroundTint="@color/pill"
                     android:padding="9dp"
                     android:src="@drawable/ol_settings"
-                    android:tint="@color/ink" />
+                    app:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -412,7 +414,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ol_chev_down"
-                    android:tint="@color/ink2" />
+                    app:tint="@color/ink2" />
             </RelativeLayout>
 
             <LinearLayout
@@ -465,7 +467,7 @@
                     android:backgroundTint="@color/pill"
                     android:padding="9dp"
                     android:src="@drawable/ol_apps"
-                    android:tint="@color/ink" />
+                    app:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -484,7 +486,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ol_chev_down"
-                    android:tint="@color/ink2" />
+                    app:tint="@color/ink2" />
             </RelativeLayout>
 
             <LinearLayout
@@ -530,7 +532,7 @@
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:src="@drawable/ol_logout"
-                    android:tint="@color/ink" />
+                    app:tint="@color/ink" />
 
                 <TextView
                     android:layout_width="wrap_content"

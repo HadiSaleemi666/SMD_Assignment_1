@@ -1,111 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="16dp"
-    android:paddingTop="10dp"
-    android:paddingEnd="12dp"
-    android:paddingBottom="10dp">
+    android:orientation="vertical">
+
+    <!-- "New" / "Earlier" section title, shown on the first row of each section -->
+    <TextView
+        android:id="@+id/sectionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:letterSpacing="-0.02"
+        android:paddingStart="16dp"
+        android:textColor="@color/ink"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <RelativeLayout
-        android:id="@+id/avWrap"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_alignParentStart="true">
+        android:id="@+id/row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="84dp"
+        android:paddingStart="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="11dp">
 
-        <TextView
+        <com.hadisaleemi.i221043.ui.AvatarView
             android:id="@+id/avatar"
-            style="@style/AvatarText"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:textSize="22sp" />
-    </RelativeLayout>
+            android:layout_width="63dp"
+            android:layout_height="63dp" />
 
-    <RelativeLayout
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_alignEnd="@id/avWrap"
-        android:layout_alignBottom="@id/avWrap"
-        android:layout_marginEnd="-6dp"
-        android:layout_marginBottom="-4dp"
-        android:background="@drawable/bg_circle">
+        <ImageView
+            android:id="@+id/badgeRing"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:layout_alignEnd="@id/avatar"
+            android:layout_alignBottom="@id/avatar"
+            android:layout_marginEnd="-3dp"
+            android:layout_marginBottom="-4dp"
+            android:background="@drawable/bg_circle" />
 
         <ImageView
             android:id="@+id/badge"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_centerInParent="true"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignEnd="@id/avatar"
+            android:layout_alignBottom="@id/avatar"
+            android:layout_marginBottom="-1dp"
             android:background="@drawable/bg_circle"
-            android:padding="4dp"
-            android:contentDescription="@string/notification_badge" />
-    </RelativeLayout>
+            android:contentDescription="@string/notification_badge"
+            android:padding="5dp"
+            app:tint="#FFFFFF" />
 
-    <ImageView
-        android:id="@+id/more"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_alignParentEnd="true"
-        android:padding="4dp"
-        android:src="@drawable/ic_more"
-        app:tint="@color/ink2"
-        android:contentDescription="@string/more_icon" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="6dp"
-        android:layout_toStartOf="@id/more"
-        android:layout_toEndOf="@id/avWrap"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/ink"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:textSize="14sp" />
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="30dp"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@string/more_icon"
+            android:padding="2dp"
+            android:src="@drawable/ic_more"
+            app:tint="#6F6A63" />
 
         <LinearLayout
-            android:id="@+id/actions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@id/more"
+            android:layout_toEndOf="@id/avatar"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/btnConfirm"
-                android:layout_width="0dp"
-                android:layout_height="42dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_teal12"
-                android:gravity="center"
-                android:text="@string/confirm"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/btnDelete"
-                android:layout_width="0dp"
-                android:layout_height="42dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_gray12"
-                android:gravity="center"
-                android:text="@string/delete"
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="2dp"
                 android:textColor="@color/ink"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:textColor="@color/ink2"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/actions"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_teal12"
+                    android:gravity="center"
+                    android:text="@string/confirm"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_cream12"
+                    android:gravity="center"
+                    android:text="@string/delete"
+                    android:textColor="@color/ink"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

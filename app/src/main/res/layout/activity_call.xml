@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/teal">
 
+    <!-- Remote video fills the screen during a video call -->
+    <FrameLayout
+        android:id="@+id/remoteVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/nearblack"
+        android:visibility="gone" />
+
     <LinearLayout
+        android:id="@+id/e2eRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -17,14 +27,14 @@
             android:layout_height="14dp"
             android:alpha="0.8"
             android:src="@drawable/ic_lock"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:alpha="0.8"
-            android:text="End-to-end encrypted"
+            android:text="@string/e2e"
             android:textColor="#FFFFFF"
             android:textSize="14sp" />
     </LinearLayout>
@@ -45,18 +55,20 @@
         android:layout_marginTop="164dp"
         android:background="@drawable/bg_halo" />
 
-    <TextView
-        android:id="@+id/callAvatar"
+    <FrameLayout
+        android:id="@+id/callAvatarRing"
         android:layout_width="204dp"
         android:layout_height="204dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="178dp"
         android:background="@drawable/bg_call_avatar"
-        android:gravity="center"
-        android:text="AM"
-        android:textColor="#FFFFFF"
-        android:textSize="64sp"
-        android:textStyle="bold" />
+        android:padding="6dp">
+
+        <com.hadisaleemi.i221043.ui.AvatarView
+            android:id="@+id/callAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/nameRow"
@@ -69,9 +81,11 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/callName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ammi"
+            android:shadowColor="#66000000"
+            android:shadowRadius="4"
             android:textColor="#FFFFFF"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -84,7 +98,7 @@
             android:backgroundTint="@color/heart"
             android:padding="5dp"
             android:src="@drawable/ic_heart"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
     </LinearLayout>
 
     <TextView
@@ -94,11 +108,65 @@
         android:layout_below="@id/nameRow"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
-        android:text="03:12"
+        android:shadowColor="#66000000"
+        android:shadowRadius="4"
         android:textColor="#E6FFFFFF"
         android:textSize="18sp" />
 
+    <!-- My camera, picture-in-picture -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/localVideoCard"
+        android:layout_width="110dp"
+        android:layout_height="160dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="6dp">
+
+        <FrameLayout
+            android:id="@+id/localVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/nearblack" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Incoming call: decline / accept -->
     <LinearLayout
+        android:id="@+id/incomingControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btnDecline"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@drawable/bg_end_call"
+            android:contentDescription="@string/decline"
+            android:padding="24dp"
+            android:src="@drawable/ic_call_end"
+            app:tint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/btnAccept"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="72dp"
+            android:background="@drawable/bg_accept_call"
+            android:contentDescription="@string/accept"
+            android:padding="24dp"
+            android:src="@drawable/ic_call"
+            app:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/callControls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -112,9 +180,10 @@
             android:layout_height="60dp"
             android:background="@drawable/bg_circle"
             android:backgroundTint="#33FFFFFF"
+            android:contentDescription="@string/switch_camera"
             android:padding="18dp"
             android:src="@drawable/ic_list"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/btnMute"
@@ -123,9 +192,10 @@
             android:layout_marginStart="14dp"
             android:background="@drawable/bg_circle"
             android:backgroundTint="#33FFFFFF"
+            android:contentDescription="@string/mute"
             android:padding="18dp"
             android:src="@drawable/ic_mic"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/btnEnd"
@@ -133,9 +203,10 @@
             android:layout_height="88dp"
             android:layout_marginStart="14dp"
             android:background="@drawable/bg_end_call"
+            android:contentDescription="@string/end_call"
             android:padding="24dp"
             android:src="@drawable/ic_call_end"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
 
         <ImageView
             android:id="@+id/btnSpeaker"
@@ -144,8 +215,9 @@
             android:layout_marginStart="14dp"
             android:background="@drawable/bg_circle"
             android:backgroundTint="#33FFFFFF"
+            android:contentDescription="@string/speaker"
             android:padding="18dp"
             android:src="@drawable/ic_speaker"
-            android:tint="#FFFFFF" />
+            app:tint="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>

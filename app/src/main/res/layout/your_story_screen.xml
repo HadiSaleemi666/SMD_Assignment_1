@@ -22,11 +22,38 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/storyImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/extra5"
+                android:background="@color/SeaGreen"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/story_image"/>
+
+            <VideoView
+                android:id="@+id/storyVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+            <!-- Left / right halves: tap to go back / forward, hold to pause -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/tapPrev"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:id="@+id/tapNext"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/story_progress"
@@ -36,17 +63,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginTop="12dp"
-                android:orientation="horizontal"
-                android:weightSum="10"
-                android:background="@drawable/gray_progress">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="8"
-                    android:background="@drawable/white_progress"/>
-
-            </LinearLayout>
+                android:orientation="horizontal"/>
 
             <RelativeLayout
                 android:id="@+id/story_header"
@@ -55,28 +72,11 @@
                 android:layout_alignTop="@id/story_progress"
                 android:layout_marginTop="16dp">
 
-                <RelativeLayout
+                <com.hadisaleemi.i221043.ui.AvatarView
                     android:id="@+id/story_pfp"
                     android:layout_width="44dp"
                     android:layout_height="44dp"
-                    android:layout_marginStart="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/seagreen_oval"
-                        android:contentDescription="@string/sea_green_default_profile_picture"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/jw"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="14sp"/>
-
-                </RelativeLayout>
+                    android:layout_marginStart="12dp"/>
 
                 <TextView
                     android:id="@+id/story_name"
@@ -97,6 +97,7 @@
                     android:layout_alignStart="@id/story_name"
                     android:layout_alignTop="@id/story_pfp"
                     android:layout_marginTop="23dp"
+                    android:id="@+id/story_time"
                     android:text="@string/_11h_close_friends"
                     android:textColor="@color/fadedwhite"
                     android:textSize="12sp"/>
@@ -115,6 +116,8 @@
 
             <TextView
                 android:id="@+id/saturday_label"
+                android:visibility="gone"
+                android:maxWidth="280dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -134,6 +137,7 @@
 
             <RelativeLayout
                 android:id="@+id/floating_hearts"
+                android:visibility="gone"
                 android:layout_width="80dp"
                 android:layout_height="190dp"
                 android:layout_alignParentStart="true"
@@ -220,79 +224,25 @@
                 android:layout_width="76dp"
                 android:layout_height="30dp">
 
-                <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/pfp_darkpink"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:contentDescription="@string/pfp_green"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/ak"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="9sp"
-                        tools:ignore="SmallSp"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
+                <com.hadisaleemi.i221043.ui.AvatarView
+                    android:id="@+id/seen1"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginStart="23dp">
+                    android:visibility="gone"/>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/pfp_pinkpurple"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:contentDescription="@string/pfp_green"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/lm"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="9sp"
-                        tools:ignore="SmallSp"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
+                <com.hadisaleemi.i221043.ui.AvatarView
+                    android:id="@+id/seen2"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginStart="46dp">
+                    android:layout_marginStart="23dp"
+                    android:visibility="gone"/>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/pfp_green"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:contentDescription="@string/pfp_green"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/of"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="9sp"
-                        tools:ignore="SmallSp"/>
-
-                </RelativeLayout>
+                <com.hadisaleemi.i221043.ui.AvatarView
+                    android:id="@+id/seen3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="46dp"
+                    android:visibility="gone"/>
 
             </RelativeLayout>
 
@@ -300,6 +250,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:id="@+id/seenText"
                 android:text="@string/seen_by_24"
                 android:textColor="@color/white"
                 android:textSize="13sp"/>

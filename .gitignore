@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Firebase
+# Service-account key used to send FCM pushes from the app (never commit it)
+app/src/main/assets/fcm-service-account.json
+.firebase/
+firebase-debug.log

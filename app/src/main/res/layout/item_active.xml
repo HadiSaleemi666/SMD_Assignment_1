@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="76dp"
+    android:layout_width="78dp"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="64dp"
-        android:layout_height="64dp">
+        android:layout_width="59dp"
+        android:layout_height="59dp">
 
-        <TextView
+        <com.hadisaleemi.i221043.ui.AvatarView
             android:id="@+id/avatar"
-            style="@style/AvatarText"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:textSize="22sp" />
+            android:layout_width="59dp"
+            android:layout_height="59dp" />
 
         <ImageView
             android:id="@+id/plus"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
             android:background="@drawable/bg_circle"
             android:backgroundTint="@color/pill"
-            android:padding="20dp"
-            android:src="@drawable/ic_add"
+            android:contentDescription="@string/add_icon"
+            android:padding="17dp"
+            android:src="@drawable/ol_plus"
             android:visibility="gone"
-            app:tint="@color/ink"
-            android:contentDescription="@string/add_icon" />
+            app:tint="@color/ink" />
 
         <View
             android:id="@+id/dot"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="2dp"
             android:background="@drawable/bg_online" />
     </RelativeLayout>
 
@@ -43,6 +43,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxWidth="72dp"
+        android:singleLine="true"
         android:textColor="@color/ink2"
         android:textSize="14sp" />
 </LinearLayout>

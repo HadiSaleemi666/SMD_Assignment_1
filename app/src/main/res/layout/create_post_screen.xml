@@ -3,10 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/RL1"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/one_sided_black_border">
@@ -25,7 +27,7 @@
             android:id="@+id/comments_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/comments"
+            android:text="@string/create_post"
             android:textColor="@color/black"
             android:layout_alignStart="@id/backarrow"
             android:layout_marginStart="30dp"
@@ -57,28 +59,16 @@
         android:layout_alignTop="@id/RL1"
         android:layout_marginTop="60dp">
 
-        <ImageView
+        <com.hadisaleemi.i221043.ui.AvatarView
             android:id="@+id/seagreenpfp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="5dp"
-            android:src="@drawable/pfp_seagreen"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:contentDescription="@string/sea_green_default_profile_picture"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jw"
-            android:textColor="@color/white"
-            android:layout_alignStart="@id/seagreenpfp"
-            android:layout_alignEnd="@id/seagreenpfp"
-            android:layout_alignTop="@id/seagreenpfp"
-            android:layout_alignBottom="@id/seagreenpfp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="20sp"/>
-
-        <TextView
+            android:id="@+id/authorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/jacob_west"
@@ -125,15 +115,33 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/post_text"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/composerScroll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/RL2"
-        android:layout_marginTop="110dp"
+        android:layout_below="@id/RL2"
+        android:layout_above="@id/sheet">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/post_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="20dp"
-        android:text="@string/creating_post_text"
+        android:layout_marginEnd="20dp"
+        android:background="@null"
+        android:gravity="top|start"
+        android:hint="@string/whats_on_your_mind_plain"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minHeight="90dp"
+        android:padding="0dp"
         android:textColor="@color/black"
+        android:textColorHint="@color/LightBrown"
         android:textSize="25sp"/>
 
     <LinearLayout
@@ -141,8 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignTop="@id/post_text"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="12dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="40dp">
 
@@ -255,36 +262,52 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/selectedImages"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:visibility="gone"/>
+
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/color_options"
-        android:layout_marginTop="90dp"
+        android:layout_alignTop="@id/sheet"
+        android:layout_marginTop="-10dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/shadow_layout"
         android:elevation="10dp"/>
 
     <RelativeLayout
+        android:id="@+id/sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignTop="@id/color_options"
-        android:layout_marginTop="100dp"
         android:background="@drawable/white_pop_up_screen"
         android:elevation="10dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/sheetHandle"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
             android:src="@drawable/gray_bar"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="190dp"/>
+            android:contentDescription="@string/more_options"/>
 
         <RelativeLayout
+            android:id="@+id/sheetRows"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:clipChildren="true"
             android:layout_marginTop="20dp">
 
             <RelativeLayout

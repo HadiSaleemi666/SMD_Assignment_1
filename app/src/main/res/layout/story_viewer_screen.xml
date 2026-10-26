@@ -21,11 +21,38 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/storyImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/extra8"
+                android:background="@color/SeaGreen"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/story_image"/>
+
+            <VideoView
+                android:id="@+id/storyVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+            <!-- Left / right halves: tap to go back / forward, hold to pause -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/tapPrev"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <View
+                    android:id="@+id/tapNext"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/story_progress"
@@ -35,46 +62,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginTop="12dp"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="4dp"
-                    android:background="@drawable/white_progress"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="4dp"
-                    android:background="@drawable/white_progress"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="4dp"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:background="@drawable/gray_progress">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/white_progress"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/gray_progress"/>
-
-            </LinearLayout>
+                android:orientation="horizontal"/>
 
             <RelativeLayout
                 android:id="@+id/story_header"
@@ -83,30 +71,11 @@
                 android:layout_alignTop="@id/story_progress"
                 android:layout_marginTop="16dp">
 
-                <RelativeLayout
+                <com.hadisaleemi.i221043.ui.AvatarView
                     android:id="@+id/story_pfp"
                     android:layout_width="44dp"
                     android:layout_height="44dp"
-                    android:layout_marginStart="12dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/pfp_green"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:contentDescription="@string/pfp_green"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="@string/of"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:textSize="14sp"/>
-
-                </RelativeLayout>
+                    android:layout_marginStart="12dp"/>
 
                 <TextView
                     android:id="@+id/story_name"
@@ -166,6 +135,8 @@
 
             <TextView
                 android:id="@+id/karachi_label"
+                android:visibility="gone"
+                android:maxWidth="280dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -197,7 +168,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical">
 
-        <TextView
+        <EditText
         android:id="@+id/reply_input"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -206,8 +177,12 @@
             android:gravity="center_vertical"
             android:paddingStart="20dp"
             android:background="@drawable/outlined_pill_white"
-            android:text="@string/send_message"
-            android:textColor="@color/fadedwhite"
+            android:hint="@string/send_message"
+            android:textColorHint="@color/fadedwhite"
+            android:imeOptions="actionSend"
+            android:inputType="textCapSentences"
+            android:singleLine="true"
+            android:textColor="@color/white"
             android:textSize="15sp"/>
 
         <ImageView

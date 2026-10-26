@@ -8,6 +8,7 @@
     android:layout_gravity="center">
 
     <RelativeLayout
+        android:layout_marginTop="20dp"
         android:id="@+id/firstRL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -108,12 +109,19 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Jacob"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="26dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:hint="Jacob"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="0dp"
+                android:singleLine="true"
+                android:textSize="14sp"
                 android:textColor="@color/black"/>
 
         </androidx.cardview.widget.CardView>
@@ -134,12 +142,19 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="West"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="26dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@null"
+                android:hint="West"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="0dp"
+                android:singleLine="true"
+                android:textSize="14sp"
                 android:textColor="@color/black"/>
 
         </androidx.cardview.widget.CardView>
@@ -198,6 +213,7 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
+                android:id="@+id/tvDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="14"
@@ -233,6 +249,7 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
+                android:id="@+id/tvMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mar"
@@ -268,6 +285,7 @@
                 android:layout_marginTop="10dp"/>
 
             <TextView
+                android:id="@+id/tvYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2004"
@@ -336,6 +354,17 @@
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="20dp" />
 
+            <ImageView
+                android:id="@+id/dotFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filled_circle"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:visibility="invisible"
+                android:layout_marginStart="81dp"
+                android:layout_marginTop="21dp"/>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -366,6 +395,7 @@
                 android:layout_marginTop="20dp"/>
 
             <ImageView
+                android:id="@+id/dotMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/filled_circle"
@@ -401,6 +431,17 @@
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="20dp"/>
 
+            <ImageView
+                android:id="@+id/dotCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filled_circle"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:visibility="invisible"
+                android:layout_marginStart="81dp"
+                android:layout_marginTop="21dp"/>
+
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 
@@ -430,12 +471,18 @@
                 android:textColor="@color/gray"
                 android:textSize="12sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/email"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@null"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:padding="0dp"
+                android:singleLine="true"
                 android:textSize="15sp"
                 android:textColor="@color/black"/>
 
@@ -469,22 +516,29 @@
                 android:textColor="@color/gray"
                 android:textSize="12sp" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/password_encrypted"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="60dp"
+                android:background="@null"
+                android:hint="@string/pass_encrypted"
+                android:inputType="textPassword"
+                android:padding="0dp"
+                android:singleLine="true"
                 android:textSize="15sp"
                 android:textColor="@color/black"/>
 
             <ImageView
-                android:layout_width="99dp"
+                android:id="@+id/btnReveal"
+                android:layout_width="40dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="175dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
                 android:layout_marginTop="15dp"
-                android:layout_toEndOf="@+id/textView3"
+                android:contentDescription="@string/show_password"
                 android:src="@drawable/reveal_icon">
 
             </ImageView>
@@ -493,16 +547,49 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/password_strength_indicator"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/password_strength_indicator"
         android:layout_alignTop="@id/newpassword"
-        android:layout_marginTop="70dp"
-        android:layout_marginStart="150dp"
-        android:scaleY="4"
-        android:scaleX="4"/>
+        android:layout_marginTop="66dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/strength1"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/strength_segment" />
+
+        <View
+            android:id="@+id/strength2"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/strength_segment" />
+
+        <View
+            android:id="@+id/strength3"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/strength_segment" />
+
+        <TextView
+            android:id="@+id/strengthLabel"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:gravity="end"
+            android:textColor="@color/LightBrown"
+            android:textSize="12sp" />
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/FifthRL"
@@ -573,5 +660,13 @@
 
 
 
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/SeaGreen"
+        android:visibility="gone" />
 
 </RelativeLayout>

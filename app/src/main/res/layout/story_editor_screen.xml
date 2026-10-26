@@ -21,11 +21,19 @@
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/storyImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/extra5"
+                android:background="@color/SeaGreen"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/story_image"/>
+
+            <VideoView
+                android:id="@+id/storyVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
 
             <ImageView
                 android:id="@+id/close_button"
@@ -111,6 +119,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="36dp"
                 android:layout_marginTop="410dp"
+                android:maxWidth="280dp"
+                android:visibility="gone"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:paddingTop="8dp"
@@ -147,26 +157,10 @@
             android:gravity="center"
             android:background="@drawable/dark_pill">
 
-            <RelativeLayout
+            <com.hadisaleemi.i221043.ui.AvatarView
+                android:id="@+id/myAvatar"
                 android:layout_width="28dp"
-                android:layout_height="28dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/seagreen_oval"
-                    android:contentDescription="@string/sea_green_default_profile_picture"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/jw"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="9sp"/>
-
-            </RelativeLayout>
+                android:layout_height="28dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -218,5 +212,13 @@
             android:contentDescription="@string/next_arrow"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone" />
 
 </RelativeLayout>

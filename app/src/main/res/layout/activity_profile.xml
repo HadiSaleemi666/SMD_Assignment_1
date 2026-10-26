@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <!-- top bar -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#FFFFFF">
+        android:background="#FFFFFF"
+        android:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/btnBack"
@@ -19,7 +20,7 @@
             android:layout_marginStart="2dp"
             android:padding="12dp"
             android:src="@drawable/ol_back"
-            android:tint="@color/ink" />
+            app:tint="@color/ink" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,8 +28,9 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="52dp"
             android:textStyle="bold"
+            android:id="@+id/titleName"
             android:letterSpacing="-0.04"
-            android:text="Omar Farooq"
+            android:text=""
             android:textColor="@color/ink"
             android:textSize="20sp" />
 
@@ -41,7 +43,7 @@
             android:layout_marginEnd="6dp"
             android:padding="12dp"
             android:src="@drawable/ol_search"
-            android:tint="@color/ink" />
+            app:tint="@color/ink" />
     </RelativeLayout>
 
     <ScrollView
@@ -64,22 +66,22 @@
                     android:id="@+id/cover"
                     android:layout_width="match_parent"
                     android:layout_height="207dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/art_cover_night" />
+                    android:background="@color/teal_light"
+                    android:scaleType="centerCrop" />
 
-                <TextView
-                    android:id="@+id/avatar"
+                <FrameLayout
                     android:layout_width="164dp"
                     android:layout_height="164dp"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:background="@drawable/bg_ring_profile"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:letterSpacing="-0.04"
-                    android:text="OF"
-                    android:textColor="#FFFFFF"
-                    android:textSize="56sp" />
+                    android:background="@drawable/white_circle"
+                    android:padding="5dp">
+
+                    <com.hadisaleemi.i221043.ui.AvatarView
+                        android:id="@+id/avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
             </RelativeLayout>
 
             <TextView
@@ -88,8 +90,9 @@
                 android:layout_marginTop="8dp"
                 android:textStyle="bold"
                 android:gravity="center"
+                android:id="@+id/tvName"
                 android:letterSpacing="-0.05"
-                android:text="Omar Farooq"
+                android:text=""
                 android:textColor="@color/ink"
                 android:textSize="29sp" />
 
@@ -99,16 +102,19 @@
                 android:layout_height="22dp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="1,204 friends · 38 mutual"
+                android:text=""
                 android:textColor="@color/ink2"
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvBio"
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginTop="6dp"
                 android:gravity="center"
-                android:text="Night photographer. Karachi after dark."
+                android:text=""
                 android:textColor="@color/ink"
                 android:textSize="16sp" />
 
@@ -135,7 +141,7 @@
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:src="@drawable/ol_person_add"
-                        android:tint="#FFFFFF" />
+                        app:tint="#FFFFFF" />
 
                     <TextView
                         android:id="@+id/tvAdd"
@@ -162,7 +168,7 @@
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:src="@drawable/ol_messenger"
-                        android:tint="@color/ink" />
+                        app:tint="@color/ink" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -182,11 +188,12 @@
                     android:background="@drawable/bg_cream12"
                     android:padding="11dp"
                     android:src="@drawable/ic_more"
-                    android:tint="@color/ink" />
+                    app:tint="@color/ink" />
             </LinearLayout>
 
             <!-- mutual friends -->
             <LinearLayout
+                android:id="@+id/mutualRow"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:layout_marginStart="16dp"
@@ -196,37 +203,29 @@
                 android:orientation="horizontal">
 
                 <RelativeLayout
+                    android:id="@+id/mutualAvatars"
                     android:layout_width="84dp"
                     android:layout_height="34dp">
 
-                    <TextView
+                    <com.hadisaleemi.i221043.ui.AvatarView
                         android:id="@+id/mf1"
-                        style="@style/AvatarText"
-                        android:backgroundTint="#A23B52"
                         android:layout_width="34dp"
                         android:layout_height="34dp"
-                        android:text="AK"
-                        android:textSize="11sp" />
+                        android:visibility="gone" />
 
-                    <TextView
+                    <com.hadisaleemi.i221043.ui.AvatarView
                         android:id="@+id/mf2"
-                        style="@style/AvatarText"
-                        android:backgroundTint="#7B4F7F"
                         android:layout_width="34dp"
                         android:layout_height="34dp"
                         android:layout_marginStart="23dp"
-                        android:text="LM"
-                        android:textSize="11sp" />
+                        android:visibility="gone" />
 
-                    <TextView
+                    <com.hadisaleemi.i221043.ui.AvatarView
                         android:id="@+id/mf3"
-                        style="@style/AvatarText"
-                        android:backgroundTint="#3F6E8C"
                         android:layout_width="34dp"
                         android:layout_height="34dp"
                         android:layout_marginStart="46dp"
-                        android:text="ZR"
-                        android:textSize="11sp" />
+                        android:visibility="gone" />
                 </RelativeLayout>
 
                 <TextView
@@ -236,7 +235,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
                     android:lineSpacingExtra="0dp"
-                    android:text="Friends with Aisha Khan, Lina Marsh and 36 others"
+                    android:text=""
                     android:textColor="@color/ink"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -251,6 +250,7 @@
 
             <!-- details -->
             <LinearLayout
+                android:id="@+id/rowWork"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:layout_marginStart="14dp"
@@ -263,19 +263,20 @@
                     android:layout_height="28dp"
                     android:padding="2dp"
                     android:src="@drawable/ol_briefcase"
-                    android:tint="@color/ink2" />
+                    app:tint="@color/ink2" />
 
                 <TextView
                     android:id="@+id/tvWork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Photographer at Studio Nocturne"
+                    android:text=""
                     android:textColor="@color/ink"
                     android:textSize="17sp" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/rowLives"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:layout_marginStart="14dp"
@@ -287,14 +288,14 @@
                     android:layout_height="28dp"
                     android:padding="2dp"
                     android:src="@drawable/ol_pin"
-                    android:tint="@color/ink2" />
+                    app:tint="@color/ink2" />
 
                 <TextView
                     android:id="@+id/tvLives"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="Lives in Karachi, Pakistan"
+                    android:text=""
                     android:textColor="@color/ink"
                     android:textSize="17sp" />
             </LinearLayout>
@@ -311,19 +312,21 @@
                     android:layout_height="28dp"
                     android:padding="2dp"
                     android:src="@drawable/ol_clock"
-                    android:tint="@color/ink2" />
+                    app:tint="@color/ink2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/tvJoined"
                     android:layout_marginStart="10dp"
-                    android:text="Joined June 2017"
+                    android:text=""
                     android:textColor="@color/ink"
                     android:textSize="17sp" />
             </LinearLayout>
 
             <!-- photos -->
             <RelativeLayout
+                android:id="@+id/photosHeader"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_marginStart="16dp"
@@ -358,7 +361,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="24dp"
+                android:id="@+id/photosRow"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -369,7 +372,7 @@
                     android:background="@drawable/bg_tile8"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/art_night" />
+                    android:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/ph2"
@@ -380,7 +383,7 @@
                     android:background="@drawable/bg_tile8"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/art_lilac" />
+                    android:visibility="invisible" />
 
                 <ImageView
                     android:id="@+id/ph3"
@@ -391,8 +394,40 @@
                     android:background="@drawable/bg_tile8"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/art_blue" />
+                    android:visibility="invisible" />
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/LightBeige" />
+
+            <TextView
+                android:id="@+id/posts_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:letterSpacing="-0.04"
+                android:text="@string/posts"
+                android:textColor="@color/ink"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profilePosts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/noPosts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                android:text="@string/no_posts"
+                android:textColor="@color/gray"
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

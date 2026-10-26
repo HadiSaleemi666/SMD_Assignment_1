@@ -6,6 +6,7 @@
     android:background="@color/white">
 
     <RelativeLayout
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="24dp">
@@ -30,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/backarrow"
+                android:id="@+id/titleName"
                 android:layout_marginStart="40dp"
                 android:layout_centerVertical="true"
                 android:text="@string/jacob_west"
@@ -57,9 +59,10 @@
             android:layout_marginTop="56dp">
 
             <ImageView
+                android:id="@+id/coverImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/secondstory"
+                android:background="@color/lightblue"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/cover_photo"/>
 
@@ -91,21 +94,11 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/white_circle"/>
 
-            <ImageView
+            <com.hadisaleemi.i221043.ui.AvatarView
+                android:id="@+id/profileAvatar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:src="@drawable/seagreen_oval"
-                android:contentDescription="@string/sea_green_default_profile_picture"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/jw"
-                android:textColor="@color/white"
-                android:fontFamily="@font/logo_text_bold"
-                android:textSize="56sp"/>
+                android:layout_margin="5dp"/>
 
             <ImageView
         android:id="@+id/btn_avatar_camera"
@@ -163,7 +156,8 @@
 
             <TextView
                 android:id="@+id/profile_bio"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="18dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@id/friends_count"
                 android:layout_marginTop="26dp"
@@ -176,8 +170,8 @@
                 android:id="@+id/profile_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
-                android:layout_alignTop="@id/profile_bio"
-                android:layout_marginTop="36dp"
+                android:layout_below="@id/profile_bio"
+                android:layout_marginTop="14dp"
                 android:layout_marginStart="18dp"
                 android:layout_marginEnd="18dp"
                 android:orientation="horizontal">
@@ -253,8 +247,8 @@
             android:id="@+id/tabs_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/name_section"
-            android:layout_marginTop="160dp">
+            android:layout_below="@id/name_section"
+            android:layout_marginTop="16dp">
 
             <LinearLayout
                 android:id="@+id/profile_tabs"
@@ -337,8 +331,8 @@
             android:id="@+id/details_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/tabs_section"
-            android:layout_marginTop="68dp">
+            android:layout_below="@id/tabs_section"
+            android:layout_marginTop="16dp">
 
             <TextView
                 android:id="@+id/details_heading"
@@ -378,7 +372,9 @@
                 android:textSize="15sp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/detail_work_extra"
+                android:visibility="gone"
+                                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/detail_work_text"
                 android:layout_marginStart="4dp"
@@ -418,7 +414,9 @@
                 android:textSize="15sp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/detail_school_extra"
+                android:visibility="gone"
+                                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/detail_school_text"
                 android:layout_marginStart="4dp"
@@ -458,7 +456,9 @@
                 android:textSize="15sp"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/detail_location_extra"
+                android:visibility="gone"
+                                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/detail_location_text"
                 android:layout_marginStart="4dp"
@@ -492,7 +492,8 @@
                     android:layout_alignStart="@id/detail_joined_icon"
                     android:layout_marginStart="36dp"
                     android:layout_centerVertical="true"
-                    android:text="@string/joined_march_2019"
+                    android:id="@+id/detail_joined_text"
+                android:text="@string/joined_march_2019"
                     android:textColor="@color/black"
                     android:textSize="15sp"/>
 
@@ -504,8 +505,8 @@
             android:id="@+id/friends_section"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/details_section"
-            android:layout_marginTop="200dp">
+            android:layout_below="@id/details_section"
+            android:layout_marginTop="16dp">
 
             <TextView
                 android:id="@+id/friends_heading"
@@ -560,13 +561,33 @@
                 app:cardBackgroundColor="@color/purple">
 
                 <TextView
+                    android:id="@+id/friend_lm_init"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/lm"
                     android:textColor="@color/white"
                     android:fontFamily="@font/logo_text_bold"
                     android:textSize="40sp"/>
+
+                <ImageView
+                    android:id="@+id/friend_lm_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/friends"/>
+
+                <TextView
+                    android:id="@+id/friend_lm_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#88000000"
+                    android:ellipsize="end"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -581,13 +602,33 @@
                 app:cardBackgroundColor="@color/darkpink">
 
                 <TextView
+                    android:id="@+id/friend_ak_init"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/ak"
                     android:textColor="@color/white"
                     android:fontFamily="@font/logo_text_bold"
                     android:textSize="40sp"/>
+
+                <ImageView
+                    android:id="@+id/friend_ak_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/friends"/>
+
+                <TextView
+                    android:id="@+id/friend_ak_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#88000000"
+                    android:ellipsize="end"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -601,19 +642,79 @@
                 app:cardBackgroundColor="@color/green">
 
                 <TextView
+                    android:id="@+id/friend_of_init"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="@string/of"
                     android:textColor="@color/white"
                     android:fontFamily="@font/logo_text_bold"
                     android:textSize="40sp"/>
+
+                <ImageView
+                    android:id="@+id/friend_of_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/friends"/>
+
+                <TextView
+                    android:id="@+id/friend_of_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="#88000000"
+                    android:ellipsize="end"
+                    android:padding="6dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
 
             </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/posts_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/friends_section"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/LightBeige"/>
+
+            <TextView
+                android:id="@+id/posts_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/logo_text_bold"
+                android:text="@string/posts"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/profilePosts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <TextView
+                android:id="@+id/noPosts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                android:text="@string/no_posts"
+                android:textColor="@color/gray"
+                android:visibility="gone"/>
+        </LinearLayout>
 
     </RelativeLayout>
 

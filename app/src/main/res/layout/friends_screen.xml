@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/RL1"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true">
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +53,8 @@
             android:gravity="center"
             android:background="@drawable/circle_text"
             android:textColor="@color/white"
-            android:text="@string/_3"
+            android:id="@+id/msgBadge"
+        android:visibility="gone"
             android:textSize="8sp"
             android:layout_alignStart="@id/messageIcon"
             android:layout_marginStart="25dp"
@@ -65,8 +67,7 @@
         android:id="@+id/LL1"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_alignTop="@id/RL1"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/one_sided_black_border">
 
         <ImageView
@@ -119,7 +120,8 @@
                 android:layout_marginEnd="-6dp"
                 android:gravity="center"
                 android:background="@drawable/circle_text"
-                android:text="@string/_5"
+                android:id="@+id/notifBadge"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="9sp"
@@ -138,12 +140,22 @@
 
     </LinearLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
     <RelativeLayout
         android:id="@+id/chips_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/LL1"
-        android:layout_marginTop="58dp">
+        android:layout_marginTop="14dp">
 
         <TextView
             android:id="@+id/suggestions_chip"
@@ -178,12 +190,18 @@
 
     </RelativeLayout>
 
+
+            <LinearLayout
+                android:id="@+id/requestsSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/requests_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/chips_section"
-        android:layout_marginTop="56dp">
+        android:layout_marginTop="18dp">
 
         <TextView
             android:id="@+id/requests_heading"
@@ -201,7 +219,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/requests_heading"
             android:layout_marginStart="6dp"
-            android:text="@string/_12"
+            android:text="0"
             android:textColor="@color/Red_Orange"
             android:fontFamily="@font/logo_text_bold"
             android:textSize="20sp"/>
@@ -220,537 +238,60 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/request1"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_alignTop="@id/requests_header"
-        android:layout_marginTop="40dp">
 
-        <RelativeLayout
-            android:id="@+id/request1_pfp"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="18dp"
-            android:layout_centerVertical="true">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/requestList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/pfp_purple"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:contentDescription="@string/pfp_green"/>
+                <TextView
+                    android:id="@+id/noRequests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp"
+                    android:text="@string/no_requests"
+                    android:textColor="@color/gray"
+                    android:visibility="gone"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/si"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="26sp"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/request1_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request1_pfp"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/sara_iqbal"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/_3d"
-            android:textColor="@color/gray"
-            android:textSize="12sp"/>
-
-        <RelativeLayout
-            android:id="@+id/request1_mutual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request1_name"
-            android:layout_alignTop="@id/request1_name"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/request1_mutual1"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/pfp_purple"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_alignStart="@id/request1_mutual1"
-                android:layout_marginStart="11dp"
-                android:src="@drawable/pfp_brown"
-                android:contentDescription="@string/mutual_friends_icon"/>
+                <View
+                    android:id="@+id/requests_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/LightBeige"/>
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/listHeading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/request1_mutual1"
-                android:layout_marginStart="34dp"
-                android:text="@string/mutual_8"
-                android:textColor="@color/gray"
-                android:textSize="13sp"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignStart="@id/request1_name"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/request1_name"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="52dp"
-            android:orientation="horizontal">
-
-            <TextView
-        android:id="@+id/confirm1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:background="@drawable/seagreen_button_10"
-                android:text="@string/confirm"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
-            <TextView
-        android:id="@+id/delete1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@drawable/beige_button_10"
-                android:text="@string/delete"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/logo_text_bold"
+                android:text="@string/people_you_may_know"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
+                android:textSize="20sp"/>
 
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/request2"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_alignTop="@id/request1"
-        android:layout_marginTop="114dp">
-
-        <RelativeLayout
-            android:id="@+id/request2_pfp"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="18dp"
-            android:layout_centerVertical="true">
-
-            <ImageView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/peopleList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/pfp_pinkpurple"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:contentDescription="@string/pfp_green"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/ba"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="26sp"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/request2_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request2_pfp"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/bilal_ahmed"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/_1w"
-            android:textColor="@color/gray"
-            android:textSize="12sp"/>
-
-        <RelativeLayout
-            android:id="@+id/request2_mutual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request2_name"
-            android:layout_alignTop="@id/request2_name"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/request2_mutual1"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/pfp_purple"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_alignStart="@id/request2_mutual1"
-                android:layout_marginStart="11dp"
-                android:src="@drawable/pfp_brown"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/request2_mutual1"
-                android:layout_marginStart="34dp"
-                android:text="@string/mutual_14"
-                android:textColor="@color/gray"
-                android:textSize="13sp"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignStart="@id/request2_name"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/request2_name"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="52dp"
-            android:orientation="horizontal">
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"/>
 
             <TextView
-        android:id="@+id/confirm2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:background="@drawable/seagreen_button_10"
-                android:text="@string/confirm"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
-            <TextView
-        android:id="@+id/delete2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@drawable/beige_button_10"
-                android:text="@string/delete"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/request3"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_alignTop="@id/request2"
-        android:layout_marginTop="114dp">
-
-        <RelativeLayout
-            android:id="@+id/request3_pfp"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="18dp"
-            android:layout_centerVertical="true">
-
-            <ImageView
+                android:id="@+id/emptyPeople"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/pfp_green"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:contentDescription="@string/pfp_green"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/nf"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="26sp"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/request3_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request3_pfp"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/noor_fatima"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/_2w"
-            android:textColor="@color/gray"
-            android:textSize="12sp"/>
-
-        <RelativeLayout
-            android:id="@+id/request3_mutual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request3_name"
-            android:layout_alignTop="@id/request3_name"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/request3_mutual1"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/pfp_purple"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_alignStart="@id/request3_mutual1"
-                android:layout_marginStart="11dp"
-                android:src="@drawable/pfp_brown"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/request3_mutual1"
-                android:layout_marginStart="34dp"
-                android:text="@string/mutual_3"
+                android:padding="18dp"
+                android:text="@string/no_suggestions"
                 android:textColor="@color/gray"
-                android:textSize="13sp"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignStart="@id/request3_name"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/request3_name"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="52dp"
-            android:orientation="horizontal">
-
-            <TextView
-        android:id="@+id/confirm3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:background="@drawable/seagreen_button_10"
-                android:text="@string/confirm"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
-            <TextView
-        android:id="@+id/delete3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@drawable/beige_button_10"
-                android:text="@string/delete"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
+                android:visibility="gone"/>
         </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/request4"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_alignTop="@id/request3"
-        android:layout_marginTop="114dp">
-
-        <RelativeLayout
-            android:id="@+id/request4_pfp"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="18dp"
-            android:layout_centerVertical="true">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/pfp_darkpink"
-                android:scaleX="1.2"
-                android:scaleY="1.2"
-                android:contentDescription="@string/pfp_green"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/ds"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="26sp"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/request4_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request4_pfp"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/daniyal_shah"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="2dp"
-            android:text="@string/_3w"
-            android:textColor="@color/gray"
-            android:textSize="12sp"/>
-
-        <RelativeLayout
-            android:id="@+id/request4_mutual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/request4_name"
-            android:layout_alignTop="@id/request4_name"
-            android:layout_marginTop="25dp">
-
-            <ImageView
-                android:id="@+id/request4_mutual1"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/pfp_purple"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_alignStart="@id/request4_mutual1"
-                android:layout_marginStart="11dp"
-                android:src="@drawable/pfp_brown"
-                android:contentDescription="@string/mutual_friends_icon"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/request4_mutual1"
-                android:layout_marginStart="34dp"
-                android:text="@string/mutual_21"
-                android:textColor="@color/gray"
-                android:textSize="13sp"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_alignStart="@id/request4_name"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/request4_name"
-            android:layout_marginEnd="18dp"
-            android:layout_marginTop="52dp"
-            android:orientation="horizontal">
-
-            <TextView
-        android:id="@+id/confirm4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                android:background="@drawable/seagreen_button_10"
-                android:text="@string/confirm"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
-            <TextView
-        android:id="@+id/delete4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="@drawable/beige_button_10"
-                android:text="@string/delete"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="15sp"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <View
-        android:id="@+id/requests_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignTop="@id/request4"
-        android:layout_marginTop="114dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
-        android:background="@color/LightBeige"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/requests_divider"
-        android:layout_marginTop="22dp"
-        android:layout_marginStart="18dp"
-        android:text="@string/people_you_may_know"
-        android:textColor="@color/black"
-        android:fontFamily="@font/logo_text_bold"
-        android:textSize="20sp"/>
-
-</RelativeLayout>
+</LinearLayout>
