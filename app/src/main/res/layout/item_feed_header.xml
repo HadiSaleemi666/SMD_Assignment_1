@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Composer: avatar, "What's on your mind?" and photo shortcut -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="10dp">
+
+        <com.hadisaleemi.i221043.ui.AvatarView
+            android:id="@+id/seagreenpfp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/sea_green_default_profile_picture" />
+
+        <TextView
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/basic_white_interior_black_border"
+            android:ellipsize="end"
+            android:paddingStart="15dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="5dp"
+            android:singleLine="true"
+            android:text="@string/what_s_on_your_mind_jacob" />
+
+        <ImageView
+            android:id="@+id/btnImagePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/image_icon"
+            android:src="@drawable/image_icon_actual" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/LightBeige" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingStart="15dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="20dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/LightBeige" />
+
+    <TextView
+        android:id="@+id/emptyFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="@string/empty_feed"
+        android:textColor="@color/gray"
+        android:visibility="gone" />
+</LinearLayout>

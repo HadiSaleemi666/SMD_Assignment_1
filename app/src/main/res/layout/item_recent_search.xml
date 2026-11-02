@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/recentClock"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="18dp"
+        android:background="@drawable/circle_icon"
+        android:contentDescription="@string/clock_icon"
+        android:padding="11dp"
+        android:src="@drawable/clock_icon" />
+
+    <TextView
+        android:id="@+id/recentText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toStartOf="@id/recentRemove"
+        android:layout_toEndOf="@id/recentClock"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/recentRemove"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:contentDescription="@string/remove_search"
+        android:padding="12dp"
+        android:src="@drawable/cancel_icon" />
+</RelativeLayout>

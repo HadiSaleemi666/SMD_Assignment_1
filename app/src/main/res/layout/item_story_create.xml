@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/createStoryOption"
+    android:layout_width="90dp"
+    android:layout_height="160dp"
+    android:layout_marginEnd="10dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/createTop"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/lightblue"
+            android:gravity="center">
+
+            <com.hadisaleemi.i221043.ui.AvatarView
+                android:id="@+id/myAvatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/sea_green_default_profile_picture" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="109dp"
+            android:background="@drawable/seagreen_interior_white_border"
+            android:padding="2dp"
+            android:src="@drawable/add_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/logo_text_bold"
+            android:gravity="center"
+            android:text="@string/create_story"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

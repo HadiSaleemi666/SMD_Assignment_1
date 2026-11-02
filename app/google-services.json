@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "33568797655",
+    "firebase_url": "https://smd-assignment-b33fd-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smd-assignment-b33fd",
+    "storage_bucket": "smd-assignment-b33fd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33568797655:android:cf0af57ee6fdc106571192",
+        "android_client_info": {
+          "package_name": "com.hadisaleemi.i221043"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33568797655-ase7eqkau0ou8j1olpk3sqeu8qpqctv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMZ67ZWOx1tdeswKfyLBEypoltAO7EJFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33568797655-ase7eqkau0ou8j1olpk3sqeu8qpqctv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,205 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null",
+      ".indexOn": ["usernameLower", "nameLower", "createdAt"],
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "usernames": {
+      ".read": "auth != null",
+      "$name": {
+        ".write": "auth != null && ((!data.exists() && newData.val() === auth.uid) || (data.val() === auth.uid))"
+      }
+    },
+
+    "friends": {
+      "$uid": {
+        ".read": "auth != null",
+        ".indexOn": [".value"],
+        "$other": {
+          ".write": "auth != null && ((auth.uid === $uid && (!newData.exists() || data.exists() || root.child('friendRequests').child($uid).child($other).exists())) || (auth.uid === $other && (!newData.exists() || root.child('friendRequests').child($other).child($uid).exists())))"
+        }
+      }
+    },
+
+    "friendRequests": {
+      "$to": {
+        ".read": "auth != null && auth.uid === $to",
+        ".indexOn": [".value"],
+        "$from": {
+          ".read": "auth != null && auth.uid === $from",
+          ".write": "auth != null && (auth.uid === $from || (auth.uid === $to && !newData.exists()))"
+        }
+      }
+    },
+
+    "sentRequests": {
+      "$from": {
+        ".read": "auth != null && auth.uid === $from",
+        "$to": {
+          ".write": "auth != null && (auth.uid === $from || (auth.uid === $to && !newData.exists()))"
+        }
+      }
+    },
+
+    "closeFriends": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "$friend": {
+          ".read": "auth != null && auth.uid === $friend"
+        }
+      }
+    },
+
+    "closeFriendOf": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        "$owner": {
+          ".write": "auth != null && auth.uid === $owner"
+        }
+      }
+    },
+
+    "posts": {
+      ".read": "auth != null",
+      ".indexOn": ["timestamp", "uid"],
+      "$postId": {
+        ".write": "auth != null && ((!data.exists() && newData.child('uid').val() === auth.uid) || data.child('uid').val() === auth.uid)",
+        "shareCount": {
+          ".write": "auth != null"
+        }
+      }
+    },
+
+    "reactions": {
+      "$postId": {
+        ".read": "auth != null",
+        ".write": "auth != null && !newData.exists() && root.child('posts').child($postId).child('uid').val() === auth.uid",
+        "$uid": {
+          ".write": "auth != null && (auth.uid === $uid || root.child('posts').child($postId).child('uid').val() === auth.uid)",
+          ".validate": "newData.isString() && newData.val().matches(/^(like|love|haha|wow|sad|angry)$/)"
+        }
+      }
+    },
+
+    "comments": {
+      "$postId": {
+        ".read": "auth != null",
+        ".write": "auth != null && !newData.exists() && root.child('posts').child($postId).child('uid').val() === auth.uid",
+        "$commentId": {
+          ".write": "auth != null && ((!data.exists() && newData.child('uid').val() === auth.uid) || data.child('uid').val() === auth.uid || root.child('posts').child($postId).child('uid').val() === auth.uid || (!newData.exists() && data.child('parentId').exists() && root.child('comments/' + $postId + '/' + data.child('parentId').val() + '/uid').val() === auth.uid))"
+        }
+      }
+    },
+
+    "commentLikes": {
+      "$postId": {
+        ".read": "auth != null",
+        ".write": "auth != null && !newData.exists() && root.child('posts').child($postId).child('uid').val() === auth.uid",
+        "$commentId": {
+          ".write": "auth != null && !newData.exists() && (root.child('comments').child($postId).child($commentId).child('uid').val() === auth.uid || root.child('posts').child($postId).child('uid').val() === auth.uid || (root.child('comments').child($postId).child($commentId).child('parentId').exists() && root.child('comments/' + $postId + '/' + root.child('comments').child($postId).child($commentId).child('parentId').val() + '/uid').val() === auth.uid))",
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid"
+          }
+        }
+      }
+    },
+
+    "mediaChunks": {
+      "$owner": {
+        "$mediaId": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.uid === $owner",
+          "$index": {
+            ".validate": "newData.isString() && newData.val().length <= 600000"
+          }
+        }
+      }
+    },
+
+    "stories": {
+      ".read": "auth != null",
+      "$uid": {
+        ".indexOn": ["expiresAt"],
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "storyViews": {
+      "$owner": {
+        "$storyId": {
+          ".read": "auth != null && auth.uid === $owner",
+          ".write": "auth != null && auth.uid === $owner",
+          "$viewer": {
+            ".write": "auth != null && auth.uid === $viewer"
+          }
+        }
+      }
+    },
+
+    "messages": {
+      "$chatId": {
+        ".read": "auth != null && $chatId.contains(auth.uid)",
+        ".indexOn": ["timestamp"],
+        "$msgId": {
+          ".write": "auth != null && $chatId.contains(auth.uid) && (!data.exists() ? newData.child('senderId').val() === auth.uid : (data.child('senderId').val() === auth.uid && now - data.child('timestamp').val() < 300000))",
+          "hearts": {
+            "$uid": {
+              ".write": "auth != null && auth.uid === $uid && $chatId.contains(auth.uid)"
+            }
+          }
+        }
+      }
+    },
+
+    "userChats": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".indexOn": ["timestamp"],
+        "$other": {
+          ".read": "auth != null && auth.uid === $other",
+          ".write": "auth != null && (auth.uid === $uid || auth.uid === $other)"
+        }
+      }
+    },
+
+    "typing": {
+      "$chatId": {
+        ".read": "auth != null && $chatId.contains(auth.uid)",
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid"
+        }
+      }
+    },
+
+    "notifications": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".indexOn": ["timestamp"],
+        "$id": {
+          ".write": "auth != null && (auth.uid === $uid || (!data.exists() && newData.child('fromUid').val() === auth.uid))"
+        }
+      }
+    },
+
+    "calls": {
+      "$callee": {
+        ".read": "auth != null && (auth.uid === $callee || data.child('callerUid').val() === auth.uid)",
+        ".write": "auth != null && (auth.uid === $callee || data.child('callerUid').val() === auth.uid || newData.child('callerUid').val() === auth.uid)"
+      }
+    },
+
+    "callLogs": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        "$callId": {
+          ".write": "auth != null && (auth.uid === $uid || data.child('callerUid').val() === auth.uid || data.child('calleeUid').val() === auth.uid || newData.child('callerUid').val() === auth.uid)"
+        }
+      }
+    }
+  }
+}

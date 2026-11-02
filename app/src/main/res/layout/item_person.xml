@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:background="?attr/selectableItemBackground">
+
+    <com.hadisaleemi.i221043.ui.AvatarView
+        android:id="@+id/personAvatar"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="18dp" />
+
+    <View
+        android:id="@+id/personOnline"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_alignEnd="@id/personAvatar"
+        android:layout_alignBottom="@id/personAvatar"
+        android:background="@drawable/bg_online"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@id/personActions"
+        android:layout_toEndOf="@id/personAvatar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/personName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Omar Farooq" />
+
+        <TextView
+            android:id="@+id/personDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            tools:text="\@omar • 3 mutual friends" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/personActions"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/personState"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:background="@drawable/beige_button_10"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Requested" />
+
+        <ImageView
+            android:id="@+id/personAdd"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/lightseagreen_circle"
+            android:contentDescription="@string/add_friend_icon"
+            android:padding="11dp"
+            android:src="@drawable/person_add_seagreen" />
+    </LinearLayout>
+</RelativeLayout>

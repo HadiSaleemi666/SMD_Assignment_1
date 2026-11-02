@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="9dp"
+    android:paddingBottom="9dp">
+
+    <com.hadisaleemi.i221043.ui.AvatarView
+        android:id="@+id/requestAvatar"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="18dp" />
+
+    <TextView
+        android:id="@+id/requestName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@id/requestTime"
+        android:layout_toEndOf="@id/requestAvatar"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Sara Iqbal" />
+
+    <TextView
+        android:id="@+id/requestTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="18dp"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        tools:text="3d" />
+
+    <LinearLayout
+        android:id="@+id/requestMutual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/requestName"
+        android:layout_alignStart="@id/requestName"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.hadisaleemi.i221043.ui.AvatarView
+            android:id="@+id/mutual1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:visibility="gone" />
+
+        <com.hadisaleemi.i221043.ui.AvatarView
+            android:id="@+id/mutual2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="-7dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/mutualText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/gray"
+            android:textSize="13sp"
+            tools:text="8 mutual friends" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/requestMutual"
+        android:layout_alignStart="@id/requestName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnConfirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/seagreen_button_10"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/beige_button_10"
+            android:gravity="center"
+            android:text="@string/delete"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

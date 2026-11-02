@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="show_password">Show password</string>
+    <string name="setup_hint">Choose a unique username and write a short bio to finish setting up your profile.</string>
+    <string name="selected_photo">Selected photo</string>
+    <string name="select_multiple">Select Multiple</string>
+    <string name="picker_permission">Allow access to your photos to pick from your gallery, or tap here to use the system picker.</string>
+    <string name="picker_empty">No photos or videos found. Tap here to browse other albums.</string>
+
+    <!-- Home -->
+    <string name="whats_on_your_mind">What\'s on your mind, %1$s?</string>
+    <string name="whats_on_your_mind_plain">What\'s on your mind?</string>
+    <string name="empty_feed">No posts yet. Add friends or share something to fill your feed.</string>
+    <string name="story">Story</string>
+    <string name="hide_post">Hide post</string>
+    <string name="create_post">Create post</string>
+
+    <!-- Reactions & comments -->
+    <string name="someones_post">%1$s\'s post</string>
+    <string name="reactions_heading">Reactions</string>
+    <string name="reactions_count">Reactions (%1$d)</string>
+    <string name="remove_reaction">Remove reaction</string>
+    <string name="no_reactions">Be the first to react</string>
+    <string name="no_comments">No comments yet. Start the conversation.</string>
+    <string name="newest">Newest</string>
+    <string name="emoji">Emoji</string>
+
+    <!-- Camera & stories -->
+    <string name="camera_hint">Tap for photo, hold for video</string>
+    <string name="camera_hint_photo">Tap to take a photo</string>
+    <string name="seen_by_n">Seen by %1$d</string>
+
+    <!-- Search & friends -->
+    <string name="search_hint">Search Kinnect</string>
+    <string name="no_results">No results</string>
+    <string name="clear_all">Clear all</string>
+    <string name="no_requests">No pending friend requests</string>
+    <string name="no_suggestions">No suggestions right now</string>
+    <string name="no_friends_yet">You haven\'t added any friends yet</string>
+    <string name="show_less">Show less</string>
+    <string name="your_friends_count">Your friends (%1$d)</string>
+
+    <!-- Profiles -->
+    <string name="no_posts">No posts yet</string>
+    <string name="add_bio_hint">Add a bio so people know more about you</string>
+
+    <!-- Notifications -->
+    <string name="no_notifications">You\'re all caught up</string>
+    <string name="new_section">New</string>
+    <string name="earlier">Earlier</string>
+
+    <!-- Chats -->
+    <string name="no_chats">No conversations yet. Tap the pencil to message a friend.</string>
+    <string name="your_note">Your note</string>
+    <string name="sending_photo">Sending photo…</string>
+    <string name="replying_to_name">Replying to %1$s</string>
+    <string name="replying_to_yourself">Replying to yourself</string>
+    <string name="you_replied_to">You replied to %1$s</string>
+    <string name="you_replied_yourself">You replied to yourself</string>
+    <string name="replied_to_you">%1$s replied to you</string>
+    <string name="replied_to_themselves">%1$s replied to themselves</string>
+    <string name="you_replied_story">You replied to their story</string>
+    <string name="replied_to_your_story">Replied to your story</string>
+    <string name="edited">Edited</string>
+    <string name="seen">Seen</string>
+    <string name="shared_a_post">Shared a post</string>
+    <string name="view_post">Tap to view post</string>
+
+    <!-- Calls -->
+    <string name="e2e">End-to-end encrypted</string>
+    <string name="calling">Calling…</string>
+    <string name="connecting">Connecting…</string>
+    <string name="incoming_voice_call">Incoming voice call</string>
+    <string name="incoming_video_call">Incoming video call</string>
+    <string name="decline">Decline</string>
+    <string name="accept">Accept</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="mute">Mute</string>
+    <string name="end_call">End call</string>
+    <string name="speaker">Speaker</string>
+
+    <plurals name="friend_count">
+        <item quantity="one">%1$d friend</item>
+        <item quantity="other">%1$d friends</item>
+    </plurals>
+    <plurals name="mutual_friends">
+        <item quantity="one">%1$d mutual friend</item>
+        <item quantity="other">%1$d mutual friends</item>
+    </plurals>
+</resources>

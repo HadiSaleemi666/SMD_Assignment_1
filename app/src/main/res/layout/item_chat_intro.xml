@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="8dp">
+
+    <com.hadisaleemi.i221043.ui.AvatarView
+        android:id="@+id/introAvatar"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/introName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:letterSpacing="-0.02"
+        android:textColor="@color/ink"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/introDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/ink2"
+        android:textSize="15sp" />
+</LinearLayout>
